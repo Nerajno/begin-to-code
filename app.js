@@ -85,12 +85,14 @@ $(function() {
   }
   
   function showCurrentSlide() {
+    $('#slide-contents .tooltip').tooltipster('close');
     var page = slides[pageIndex];
     $('#slide-contents')
       .html(page.slide)
       .find('.tooltip')
         .tooltipster({
-          delay: 0
+          delay: 0,
+          animationDuration: 0
         })
         .tooltipster('open');
     $('#speaker-notes')
