@@ -57,11 +57,15 @@ body {
 
 #slide-contents {
   text-align: center;
-  font-size: 2.5vw;
+  font-size: 2vw;
 }
 
 #slide-contents pre {
   text-align: left;
+}
+
+code {
+  font-family: "Monaco", "monospace";
 }
 
 .tooltip, .tooltip * {

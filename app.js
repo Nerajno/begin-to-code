@@ -1,9 +1,9 @@
-$(function() {
-  var lessonIndex = 0;
-  var pageIndex = 0;
-  var lessons = [];
-  var slides = [];
-  
+var lessonIndex = 0;
+var pageIndex = 0;
+var lessons = [];
+var slides = [];
+
+$(function() {  
   initialize();
   
   function initialize() {
@@ -66,7 +66,7 @@ $(function() {
   $('#previous-button').click(retreatSlide);
   
   function advanceSlide() {
-    if (pageIndex < slides.length) {
+    if (pageIndex < slides.length - 1) {
       pageIndex++;
       updateSlide();
     }
@@ -91,7 +91,8 @@ $(function() {
       .find('.tooltip')
         .tooltipster({
           delay: 0
-        });
+        })
+        .tooltipster('open');
     $('#speaker-notes')
       .html(page.speakerNotes);
   }
