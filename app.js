@@ -3,9 +3,9 @@ var pageIndex = 0;
 var lessons = [];
 var slides = [];
 
-$(function() {  
+$(function() {
   initialize();
-  
+
   function initialize() {
     $.get('lessons/python/lessons.json')
       .then(function(data) {
@@ -14,7 +14,7 @@ $(function() {
         restoreHashLocation();
       });
   }
-  
+
   function restoreHashLocation() {
     if (location.hash) {
       var path = location.hash.slice(1).split('/');
@@ -33,18 +33,18 @@ $(function() {
       listLessons();
     }
   }
-  
+
   $(window).on('hashchange', function() {
     restoreHashLocation();
   });
-  
+
   function listLessons() {
     var markup = '<ul>' + lessons.map(function(lesson) {
       return '<li><a href="#' + lesson.path + '">' + lesson.title + '</a></li>';
     }).join('') + '</ul>';
     $('#lesson-list').html(markup);
   }
-  
+
   function startLesson() {
     var lesson = lessons[lessonIndex];
     $.get('lessons/python/' + lesson.path + '/presentation.md')
@@ -54,7 +54,7 @@ $(function() {
         showCurrentSlide();
       });
   }
-    
+
   $('#next-button').click(advanceSlide);
   $(window).on('keydown', function(evt) {
     if (evt.keyCode === 39) {
@@ -64,26 +64,26 @@ $(function() {
     }
   });
   $('#previous-button').click(retreatSlide);
-  
+
   function advanceSlide() {
     if (pageIndex < slides.length - 1) {
       pageIndex++;
       updateSlide();
     }
   }
-  
+
   function retreatSlide() {
     if (pageIndex > 0) {
       pageIndex--;
       updateSlide();
     }
   }
-  
+
   function updateSlide() {
     var lesson = lessons[lessonIndex];
     location.hash = lesson.path + '/' + pageIndex;
   }
-  
+
   function showCurrentSlide() {
     $('#slide-contents .tooltip').tooltipster('close');
     var page = slides[pageIndex];
@@ -98,7 +98,7 @@ $(function() {
     $('#speaker-notes')
       .html(page.speakerNotes);
   }
-  
+
   function markdownRender(md) {
     md = preprocess(md);
     var html = markdownit({
@@ -114,16 +114,16 @@ $(function() {
     html = postprocess(html);
     return html;
   }
-  
+
   function preprocess(md) {
     return md;
   }
-  
+
   function postprocess(md) {
-    md = md.replace(/\[\[([^\]]+)\]\]\[\[([^\]]+)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
+    md = md.replace(/\[\[([^\[\]]+)\]\]\[\[([^\]]+)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
     return md;
   }
-  
+
   function splitSlides(html) {
     var parts = html.split(/\<hr\>/g);
     var pages = [];
