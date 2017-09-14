@@ -8,9 +8,9 @@ and lists.
 a_long_string = 'The quick brown fox jumps over...'
 ```
 ---
-A common problem in computer science is given a long string of text,
-how can you find specific words within it? In this lesson, we'll
-consider this, and other similar problems.
+Processing text is a common use of computer science. It is also the domain
+of many of the code challenges you'll encounter in job interviews. This lesson
+will give you a framework for solving these type of problems.
 
 First we'll learn some new abilities of strings and lists.
 *****************************
@@ -354,4 +354,149 @@ Output:
 It works for lists of numbers as well. In fact, it works for any data type
 that can reasonably be sorted.
 ***************************
-## Example 1
+## The `in` Predicate Operator
+```python
+'mango' in 'purple mangosteen'
+```
+---
+You can use the `in` operator to determine if a substring (on the left) is
+contained within another string (on the right).
+***************************
+## The `in` Predicate Operator
+```python
+[['mango']][[Is this...]] in 'purple mangosteen'
+```
+---
+***************************
+## The `in` Predicate Operator
+```python
+'mango' in [['purple mangosteen']][[in this?]]
+```
+---
+***************************
+## The `in` Predicate Operator
+```python
+[['mango' in 'purple mangosteen']][[This expressions results in the value True]]
+```
+---
+***************************
+## The `in` Predicate Operator
+```python
+[['kiwi' in 'purple mangosteen']][[This expressions results in the value False]]
+```
+---
+Don't confuse this in operator with the in keyword in the for-in statement.
+
+You'd usually use this with the conditional of an if or while statement, as
+you'll see later.
+***************************
+# The Accumulator Pattern
+---
+Now that you have a bunch of tools in your toolbox, we'll make use of them
+through some patterns and examples.
+***************************
+## String Accumulator
+```python
+a_string = 'bananas'
+reversed_string = ''
+for char in a_string:
+  reversed_string = char + reversed_string
+```
+---
+One very common pattern you'll use is the *string accumulator*.
+
+This is a program that reverses a string: bananas.
+***************************
+## String Accumulator
+```python
+a_string = 'bananas'
+[[reversed_string]][[The accumulator variable]] = ''
+for char in a_string:
+  reversed_string = char + reversed_string
+```
+---
+It sets up a string variable and initializes it to an empty string, in order to accumulate
+the result onto it. The strategy is to build up the result one character at a
+time.
+***************************
+## String Accumulator
+```python
+a_string = 'bananas'
+reversed_string = ''
+for char in a_string:
+  [[reversed_string = char + reversed_string]][[The accumulator]]
+```
+---
+Within the loop, this *accumulator* instruction adds one letter to the result.
+
+[Run this code in Python Tutor](http://pythontutor.com/visualize.html#code=a_string%20%3D%20'bananas'%0Areversed_string%20%3D%20''%0Afor%20char%20in%20a_string%3A%0A%20%20reversed_string%20%3D%20char%20%2B%20reversed_string&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) to see how this works.
+***************************
+## List Accumulator
+```python
+a_string = 'bananas'
+letter_list = []
+for letter in a_string:
+  letter_list.append(letter)
+```
+---
+This same pattern works for lists as well!
+
+This program collects each letter within a_string into letter_list.
+**************************************************
+## Number Accumulator
+```python
+a_string = 'bananas'
+number_of_as = 0
+for letter in a_string:
+  if letter == 'a':
+    number_of_as = number_of_as + 1
+```
+---
+The same pattern works for numbers too!!
+
+I'll let you read this to understand what it does. Compare the previous 3
+programs to see the similarity between them.
+**************************************************
+## Example: Uppercase the Vowels
+```python
+a_string = 'apricot'
+result_string = ''
+for letter in a_string:
+  if letter in 'aeiou':
+    result_string = result_string + letter.upper()
+  else:
+    result_string = result_string + letter
+```
+---
+Take this program, evaluate it yourself as if you were the Python Tutor.
+What is the value of result_string at the end?
+
+[Run it in Python Tutor](http://pythontutor.com/visualize.html#code=a_string%20%3D%20'apricot'%0Aresult_string%20%3D%20''%0Afor%20letter%20in%20a_string%3A%0A%20%20if%20letter%20in%20'aeiou'%3A%0A%20%20%20%20result_string%20%3D%20result_string%20%2B%20letter.upper%28%29%0A%20%20else%3A%0A%20%20%20%20result_string%20%3D%20result_string%20%2B%20letter&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) to verify it.
+**************************************************
+## Example: Reverse Characters of the Words
+```python
+a_sentence = 'to be or not to be'
+word_list = a_sentence.split(' ')
+result_word_list = []
+for word in word_list:
+  reversed_word = ''
+  for letter in word:
+    reversed_word = letter + reversed_word
+  result_word_list.append(reversed_word)
+result_sentence = ' '.join(result_word_list)
+```
+---
+This program takes a sentence, and reverses the letters of each word in the
+sentence.
+
+It incorporates the reverse a string program in a previous example. And it
+also demonstrates how to use the .split and .join functions to convert between
+a string and a list of strings easily.
+**************************************************
+## What You've Learned
+
+1. Indexing a string
+2. Looping through characters of a string
+3. String and List Slicing
+4. Splitting and Joining Strings
+5. The Accumulator Pattern
