@@ -498,5 +498,7 @@ a string and a list of strings easily.
 1. Indexing a string
 2. Looping through characters of a string
 3. String and List Slicing
-4. Splitting and Joining Strings
-5. The Accumulator Pattern
+4. The in predicate operator
+5. Splitting and Joining Strings
+6. Sorting a list
+7. The Accumulator Pattern
