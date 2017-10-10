@@ -1,0 +1,5 @@
+<underline>On the Awesomeness of the State Pattern</underline>
+
+The <bg-red>state pattern</bg-red> is often used in <bold>string manipulation</bold> in cases where there is a <cyan>need to remember</cyan> some prior information that was read in in <cyan>previous parts</cyan> of the text.
+
+One or more <bold>variables</bold> - which we will call the <purple>state variables</purple> is used to store the <yellow>current state</yellow> of the <cyan>string manipulation</cyan> program. Base on the <yellow>current state</yellow>, the program will take different action.

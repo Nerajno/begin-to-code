@@ -102,6 +102,7 @@ $(function() {
   function markdownRender(md) {
     md = preprocess(md);
     var html = markdownit({
+      html: true
       // highlight: function (str, lang) {
       //   if (lang && hljs.getLanguage(lang)) {
       //     try {

@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   height: 100%;
   width: 70%;
-  
+
 }
 
 #speaker-notes {
@@ -42,17 +42,17 @@ body {
 
 }
 
-#view h1, 
-#view h2, 
-#view h3, 
-#view h4, 
+#view h1,
+#view h2,
+#view h3,
+#view h4,
 #view h5 {
   margin-top: 0;
   text-align: center;
 }
 
 #view {
-  
+
 }
 
 #slide-contents {
@@ -66,6 +66,27 @@ body {
 
 #slide-contents ul {
   text-align: left;
+}
+
+#slide-contents table {
+  font-family: "Monaco", "monospace";
+}
+
+#slide-contents img {
+  max-width: 90%;
+}
+
+#slide-contents code {
+  font-size: 1.5vw;
+}
+
+#slide-contents table td {
+  border: 1px solid grey;
+}
+
+#slide-contents p {
+  text-align: left;
+  margin: 1em 3em;
 }
 
 code {
@@ -86,4 +107,3 @@ code {
 #toolbar {
   position: absolute;
 }
-
