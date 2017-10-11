@@ -16,7 +16,7 @@ states based on the inputs it encounters and a predefined set of rules.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 1](/lessons/python/lesson-5/toggle-switch-1.jpg)
+![Toggle Switch 1](./lessons/python/lesson-5/toggle-switch-1.jpg)
 
 ---
 This is an example of a simple state machine - that for a toggle light switch.
@@ -28,7 +28,7 @@ An arrow represents an event, of which "start" is one.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 2](/lessons/python/lesson-5/toggle-switch-2.jpg)
+![Toggle Switch 2](./lessons/python/lesson-5/toggle-switch-2.jpg)
 
 ---
 A "push" event is another event this program responds to, and it causes its
@@ -39,7 +39,7 @@ The changing of the state of a state machine is called a *state transition*.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 3](/lessons/python/lesson-5/toggle-switch-3.jpg)
+![Toggle Switch 3](./lessons/python/lesson-5/toggle-switch-3.jpg)
 
 ---
 If another "push" event is sent to the program in its "on" state, it transitions
@@ -303,7 +303,7 @@ to verify that you understand how this works.
 ******************************************
 ## State Machine Example: Turnstile
 
-![Turnstile](/lessons/python/lesson-5/turnstile.jpg)
+![Turnstile](./lessons/python/lesson-5/turnstile.jpg)
 
 <https://en.wikipedia.org/wiki/Finite-state_machine>
 
@@ -327,7 +327,7 @@ the turnstile was pushed.
 *******************************************
 ## State Machine Example: Turnstile
 
-![Turnstile](/lessons/python/lesson-5/turnstile-state-machine.png)
+![Turnstile](./lessons/python/lesson-5/turnstile-state-machine.png)
 
 ---
 If the turnstile is in the locked state, and it gets a coin inserted, it
@@ -708,98 +708,98 @@ The presence of the state variable, is how it knows when to output an open tag
 and when to output a close tag `</em>`, when its transitioning back from the
 "emphasis" state to the "open" state.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/1.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/1.jpg)
 
 ---
 Let's visualize walking through this program. At the beginning, the state
 is "open", while `new_sentence` is still empty.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/2.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/2.jpg)
 
 ---
 When we process the first character of the sentence, ...
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/3.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/3.jpg)
 
 ---
 we want to append it to `new_sentence`.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/4.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/4.jpg)
 
 ---
 We do the same with the next characters...
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/5.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/5.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/6.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/6.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/7.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/7.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/8.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/8.jpg)
 
 ---
 Until we encounter the first asterisk (\*), ...
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/9.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/9.jpg)
 
 ---
 This is when the state transition occurs. The state changes from "open" to
 "emphasis".
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/10.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/10.jpg)
 
 ---
 We also append the open tag `<em>` to `new_sentence`.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/11.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/11.jpg)
 
 ---
 The next characters are append to `new_sentence` as normal.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/12.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/12.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/13.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/13.jpg)
 
 ---
 When we encounter the second asterisk,...
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/14.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/14.jpg)
 
 ---
 First we switch the state back from "emphasis" to "open". This is the
 second state transition.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/15.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/15.jpg)
 
 ---
 Then we append the close tag `</em>` to `new_sentence`. Now we are operating
 back in the "open" state and collecting characters again like normal.
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/16.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/16.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/17.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/17.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/18.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/18.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/19.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/19.jpg)
 
 ---
 ****************************************
-![Diagram 1](/lessons/python/lesson-5/convert-2-html/20.jpg)
+![Diagram 1](./lessons/python/lesson-5/convert-2-html/20.jpg)
 
 ---
 Until the end of the characters in `sentence` is reached.
