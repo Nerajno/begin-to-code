@@ -30,8 +30,7 @@ to the screen.
 A function is a bundle of code that performs a specific
 task and/or answers a specific question. Sometimes it takes
 one or more input arguments, and sometimes it produces
-and returns an output value. The function is executed when
-it is called.
+and returns an output value.
 
 ---
 You will encounter many functions on your journey, and
@@ -62,6 +61,16 @@ This entire statement - including the name of the function
 on the left, the open parenthesis, the text inside the
 parenthesis, and the closing parenthesis - is a
 *function call*.
+********************************************
+## Function Example 1
+
+```python
+[[print]][[The name of the function]]('Hello, world!')
+```
+---
+The word "print" on the left is the name of the function
+that is being called. The name identifies the function, and
+is how Python refers to the print function.
 ********************************************
 ## Function Example 1
 
@@ -98,7 +107,7 @@ different numbers of arguments.
 thing = 'Thingamabobber'
 ```
 ---
-Now, let's talk about variables. This is a variable assignment.
+Now, let's talk about variables.
 ********************************************
 ## Definition: Variable
 
@@ -118,7 +127,15 @@ problems.
 thing = 'Thingamabobber'
 ```
 ---
-Coming back to this variable assignment now.
+Coming back to this statement.
+********************************************
+## Variable Assignment
+
+```python
+[[thing = 'Thingamabobber']][[A variable assignment statement]]
+```
+---
+This is called a variable assignment statement.
 ********************************************
 ## Variable Assignment
 
@@ -134,7 +151,7 @@ The single equals sign is called the *assignment operator*.
 [[thing]][[Variable name / identifier]] = 'Thingamabobber'
 ```
 ---
-The thing on the left of the assignment operator is
+The thing on the left of the assignment operator (`=`) is
 the *variable name*. It is the name that you'll
 use later in the program to refer back to this variable.
 
@@ -149,7 +166,7 @@ You can name a variable anything you'd like, as long as:
 thing = [['Thingamabobber']][[Value]]
 ```
 ---
-The thing on the right of the assignment operator is the value you are
+The thing on the right of the assignment operator (`=`) is the value you are
 assigning to the variable.
 
 When this variable assignment statement is executed,
@@ -175,10 +192,6 @@ an actual value might have previously been used.
 ```python
 thing = 'Thingamabobber'
 print('I like this', [[thing]][[Uses the value in the thing variable]])
-```
-prints:
-```
-I like this Thingamabobber
 ```
 ---
 This example prints `'I like this'`, and then the variable `thing`. When
@@ -211,7 +224,64 @@ print('thing is', thing)
 ```
 ---
 You can change the value of a variable in the middle of a program, just like
-this. [Run it in Python Tutor](http://pythontutor.com/visualize.html#code=thing%20%3D%20'Thingamabobber'%0Aprint%28'thing%20is',%20thing%29%0Athing%20%3D%20'Thingamajig'%0Aprint%28'thing%20is',%20thing%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) to see it for yourself.
+this.
+********************************************
+## Changing Variables
+
+```python
+[[thing = 'Thingamabobber']][[Assigns a value first time]]
+print('thing is', thing)
+thing = 'Thingamajig'
+print('thing is', thing)
+```
+---
+First, this line assigns the value 'Thingamabobber' to
+the `thing` variable.
+********************************************
+## Changing Variables
+
+```python
+thing = 'Thingamabobber'
+[[print('thing is', thing)]][[Prints thing is Thingabobber]]
+thing = 'Thingamajig'
+print('thing is', thing)
+```
+---
+Then it prints `thing`, at this point, it would print
+`thing is Thingabobber`.
+********************************************
+## Changing Variables
+
+```python
+thing = 'Thingamabobber'
+print('thing is', thing)
+[[thing = 'Thingamajig']][[thing is reassigned different value]]
+print('thing is', thing)
+```
+---
+Next, `thing` is reassigned a different value of `'Thingamajig'`.
+********************************************
+## Changing Variables
+
+```python
+thing = 'Thingamabobber'
+print('thing is', thing)
+thing = 'Thingamajig'
+[[print('thing is', thing)]][[Prints thing is Thingamajig]]
+```
+---
+When it prints the second time, it would print `thing is Thingamajig`.
+********************************************
+## Run it in Python Tutor
+
+```python
+thing = 'Thingamabobber'
+print('thing is', thing)
+thing = 'Thingamajig'
+print('thing is', thing)
+```
+---
+[Run it in Python Tutor](http://pythontutor.com/visualize.html#code=thing%20%3D%20'Thingamabobber'%0Aprint%28'thing%20is',%20thing%29%0Athing%20%3D%20'Thingamajig'%0Aprint%28'thing%20is',%20thing%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) to see it in action for yourself.
 ********************************************
 ## Madlibs Game
 
@@ -249,15 +319,15 @@ Copy (type it out) this program and run it in Python Tutor. Then, change
 the values of the placeholders (variables) and run the program again to get your new
 paragraph.
 ********************************************
-## Prompting the user
+## Asking Questions
 
 ```python
 answer = input('What is your name? ')
 ```
 ---
 In Python, you can ask the user of the program a question.
-Since you are still learning, you'll be the one running the program most
-of the time, therefore, you'll be the one answering the questions.
+Since you'll be the one running the program most
+of the time, you'll be the one answering the questions.
 
 This statement uses the `input` function to ask the user a question
 and get the user's response.
@@ -316,6 +386,8 @@ When the input function is called in Python Tutor, it presents the
 questions to you in a red box.
 
 To submit an answer, simply type in the text you desire, and hit Submit.
+
+[Run this program](http://pythontutor.com/visualize.html#code=answer%20%3D%20input%28'What%20is%20your%20name%3F%20'%29%0Aprint%28'Hello,',%20answer,%20'!'%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) in Python Tutor.
 ********************************************
 ## input in terminal
 
@@ -344,8 +416,8 @@ Now, you might have noticed that there's an unwanted space before the
 exclamation point(!). There's a way to fix that, but we'll gloss over that
 detail for now.
 
-Run this program, in both Python Tutor and in the terminal so that you
-can get used to how this works.
+Run this program in the terminal as well so that you
+can get used to how both environments work.
 ********************************************
 ## Numbers and Arithmetic
 
@@ -358,8 +430,8 @@ can get used to how this works.
 ---
 As you might have imagined, Python supports working with numbers.
 
-Although it doesn't do anything useful, the above code is actually a valid
-Python program. It merely generates some numbers, in some cases even
+Although it doesn't do anything useful, this code is actually a valid
+Python program. It generates some numbers, in some cases even
 performing some calculations, but without printing them out or storing
 them in variables, no visible effect is shown.
 
@@ -400,11 +472,30 @@ But wait! Not before you can ask the user to enter in numbers...
 answer_as_string = input('What is your age? ')
 ```
 ---
-I've glossed over this detail previously, but when you asks the user to enter
-a question, you get an answer which is a string value - we will dive into
-what strings are in the next lesson. For now, suffice to say, a string is not
-a number, and in order to do arithmetic with it, you need to convert it to a
-number.
+I've glossed over this detail previously, but when you ask the user to enter a question, you get an answer which is a string.
+********************************************
+## Definition: String
+
+A string is Python's representation of text.
+
+---
+A string is what Python calls text. It has to do with
+how text is stored - as a string of characters.
+When you are printing text, you are printing a string.
+When you ask the user to enter text, they are entering a
+string. When you convert one line of text to another
+line of text later on, you are doing string manipulation.
+********************************************
+## Converting answers to numbers
+
+```python
+answer_as_string = input('What is your age? ')
+```
+---
+Back to the input function.
+For now, suffice to say, a string - which is what's returned
+by the input function - is not
+a number. In order to do arithmetic with it, you need to convert it to a number.
 ********************************************
 ## int function
 
@@ -428,7 +519,7 @@ points.
 If you answered 8, answer_as_string would contain the string '8', and then
 answer_as_integer would contain the number 8.
 
-If you answered a non number, like abc, answer_as_string would contain
+If you answered a non-number, like abc, answer_as_string would contain
 the string 'abc', and then the int function would fail and give you an error:
 `ValueError: invalid literal for int() with base 10: 'abc'` - what this means
 is that it was taking the string 'abc' as a literal number and it was
@@ -460,7 +551,7 @@ answer_as_float = [[float(answer_as_string)]][[Converts a string to a float]]
 ---
 It will convert a string to a float, which is short for
 *floating point number*. Floating point numbers which is
-common way in which computers represent decimal numbers.
+a common way in which computers represent decimal numbers.
 ********************************************
 ## 2 in 1 shortcut
 
@@ -483,6 +574,8 @@ your_age = this_year - born_year
 print('Hello', your_name, '! I predict your age is', your_age, '!!!')
 ```
 ---
+Now! Finally you can use these weapons to do some damage!
+
 This program asks 3 questions and then predicts your age. Please read through
 it, and understand how it works. Review the slides if you need to.
 You may [run it through Python Tutor](http://pythontutor.com/visualize.html#code=your_name%20%3D%20input%28'What%20is%20your%20name%3F%20'%29%0Athis_year%20%3D%20int%28input%28'What%20year%20is%20it%20now%3F%20'%29%29%0Aborn_year%20%3D%20int%28input%28'What%20year%20were%20you%20born%3F%20'%29%29%0Ayour_age%20%3D%20this_year%20-%20born_year%0Aprint%28'Hello,',%20your_name,%20'I%20predict%20your%20age%20is',%20your_age,%20'!!!'%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22Toby%22,%222017%22,%221980%22%5D&textReferences=false).
@@ -505,3 +598,33 @@ Again, read through it and understand how it works.
 
 Can you think of another common unit conversion that would be helpful?
 Write a program that does that.
+********************************************
+## What You've Learned
+
+* Printing
+* Calling functions
+* Variables
+* Asking for user input
+* Numbers
+* Arithmetic Operators
+* Strings
+---
+Here is a summary of what you've learned.
+********************************************
+## Vocabulary
+
+[Vocabulary Cheatsheet](https://gist.github.com/airportyh/837d241e6812635d5e2fe002a23cc2eb)
+---
+We've covered a lot of vocabulary in this lesson.
+I made you this vocabulary cheatsheet so that you can
+review them and look them up in case you forget what something
+means.
+********************************************
+## Homework
+
+[Homework](https://gist.github.com/airportyh/9ffa3e54a82d4d2cb0eee48d00e1328f)
+
+---
+Wait!!! You are not done! You've how homework to do. Please
+try your best. If you are stuck, ask your TA or instructor
+for help.

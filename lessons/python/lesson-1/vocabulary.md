@@ -145,5 +145,12 @@ the numbers 2 and 3, and then stores the result in the `answer` variable.
 
 ## String
 
-A *string* is how text is represented in Python. We are
-glossing over it this lesson, but will dive more into it.
+A *string* is Python's representation of text. String literal
+values are surrounded by single quotes (or double quotes).
+
+```python
+my_name = 'Toby'
+```
+In the variable assignment statement above, the value to the
+right of the assignment operator (`=`) is a string
+representing the text Toby.
