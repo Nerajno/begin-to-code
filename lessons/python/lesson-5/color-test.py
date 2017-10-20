@@ -1,0 +1,11 @@
+print("Hello")
+print("\033[1mHELLO\033[0m")
+print("\033[2mHELLO\033[0m")
+print("\033[3mHELLO\033[0m")
+print("\033[4mHELLO\033[0m")
+print("\033[5mHELLO\033[0m")
+print("\033[6mHELLO\033[0m")
+print("\033[7mHELLO\033[0m")
+print("\033[8mHELLO\033[0m")
+
+print("\033[31mHELLO\033[0m")
