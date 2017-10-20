@@ -614,6 +614,7 @@ Here is a summary of what you've learned.
 ## Vocabulary
 
 [Vocabulary Cheatsheet](https://gist.github.com/airportyh/837d241e6812635d5e2fe002a23cc2eb)
+
 ---
 We've covered a lot of vocabulary in this lesson.
 I made you this vocabulary cheatsheet so that you can
