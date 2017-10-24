@@ -80,8 +80,20 @@ body {
   font-size: 1.5vw;
 }
 
-#slide-contents table td {
+#slide-contents table {
+  border: 4px solid black;
+  border-collapse: collapse;
+}
+
+#slide-contents table td,
+#slide-contents table th {
   border: 1px solid grey;
+  padding: 0.1em 0.5em;
+  font-size: smaller;
+}
+
+#slide-contents table td {
+  text-align: left;
 }
 
 #slide-contents p {

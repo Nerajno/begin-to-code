@@ -3,6 +3,8 @@ import pygame
 pygame.init()
 pygame.display.set_caption('A House')
 screen = pygame.display.set_mode((800, 600))
+
+image = pygame.image.load('images/LOLCat-small.jpg')
 screen.fill((0, 0, 0))
 
 RED = (255, 0, 0)
@@ -13,9 +15,12 @@ BLACK = (0, 0, 0)
 # Draw the rectangle for the house's front wall
 pygame.draw.rect(screen, GREEN, (300, 300, 200, 150))
 
+# LOLCat
+screen.blit(image, (320, 320, 50, 50))
+
 # Two windows
-pygame.draw.rect(screen, BLUE, (320, 320, 50, 50))
-pygame.draw.rect(screen, BLUE, (430, 320, 50, 50))
+pygame.draw.rect(screen, BLUE, (320, 320, 50, 50), 4)
+pygame.draw.rect(screen, BLUE, (430, 320, 50, 50), 4)
 
 # A door
 pygame.draw.rect(screen, RED, (375, 375, 50, 75))

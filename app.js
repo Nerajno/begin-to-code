@@ -126,7 +126,9 @@ $(function() {
   }
 
   function splitSlides(html) {
+    // console.log('html', html);
     var parts = html.split(/\<hr\>/g);
+    // console.log('parts', parts);
     var pages = [];
     for (var i = 0; i < parts.length; i+=2) {
       pages.push({
