@@ -20,7 +20,8 @@ screen.fill((255, 255, 255))
 
 exit_game = False
 while not exit_game:
-    for event in pygame.event.get():
+    new_events = pygame.event.get()
+    for event in new_events:
         if event.type == pygame.QUIT:
             exit_game = True
         if event.type == pygame.KEYDOWN:

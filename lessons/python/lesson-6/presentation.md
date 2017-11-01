@@ -213,7 +213,11 @@ while True:
 ```
 ---
 This is your first Pygame program. Please type it into a new `.py` file,
-you may name it what you want, and then run the program.
+you may name it what you want - except for `pygame.py` -
+
+The reason you cannot name it `pygame.py` is that when you do so, and the
+program tries to `import pygame` in the first line, it will actually try
+to import your `pygame.py` as the pygame module!!!
 
 Unfortunately, Python Tutor does not support Pygame, and therefore, you'll
 not be able to use it to debug your program. More on this later.

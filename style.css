@@ -58,10 +58,12 @@ body {
 #slide-contents {
   text-align: center;
   font-size: 2vw;
+  max-width: 100%;
 }
 
 #slide-contents pre {
   text-align: left;
+  max-width: 100%;
 }
 
 #slide-contents ul {
@@ -76,8 +78,8 @@ body {
   max-width: 90%;
 }
 
-#slide-contents code {
-  font-size: 1.5vw;
+#slide-contents pre code {
+  font-size: 1.2vw;
 }
 
 #slide-contents table {
