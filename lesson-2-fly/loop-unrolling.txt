@@ -1,0 +1,18 @@
+if counter <= n:
+  print(counter)
+  counter += 5
+if counter <= n:
+  print(counter)
+  counter += 5
+if counter <= n:
+  print(counter)
+  counter += 5
+if counter <= n:
+  print(counter)
+  counter += 5
+if counter <= n:
+  print(counter)
+  counter += 5
+if counter <= n:
+  print(counter)
+  counter += 5

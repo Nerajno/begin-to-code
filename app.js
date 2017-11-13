@@ -57,9 +57,9 @@ $(function() {
 
   $('#next-button').click(advanceSlide);
   $(window).on('keydown', function(evt) {
-    if (evt.keyCode === 39) {
+    if (evt.keyCode === 39 || evt.keyCode === 40) {
       advanceSlide();
-    } else if (evt.keyCode === 37) {
+    } else if (evt.keyCode === 37 || evt.keyCode === 38) {
       retreatSlide();
     }
   });
@@ -97,6 +97,8 @@ $(function() {
         .tooltipster('open');
     $('#speaker-notes')
       .html(page.speakerNotes);
+    $('#page-number').text(pageIndex + 1);
+    $('#total-page-number').text(slides.length);
   }
 
   function markdownRender(md) {
@@ -121,7 +123,7 @@ $(function() {
   }
 
   function postprocess(md) {
-    md = md.replace(/\[\[([^\[\]]+)\]\]\[\[([^\]]+)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
+    md = md.replace(/\[\[((?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
     return md;
   }
 

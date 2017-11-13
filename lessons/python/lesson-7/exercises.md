@@ -65,3 +65,35 @@ This time, instead of drawing dots everywhere your mouse moves:
 was and then draw a line from there to where your mouse currently is.
 2. It will only draw while you are dragging your mouse - meaning that you
 have your primary mouse button held down.
+
+## Super Draw
+
+Make a "super draw" program for drawing your master piece! Tip: print out
+`event.key` for keyboard events and then press the keys you want to figure
+out what each key's key code is.
+
+1. Will draw lines when you click your mouse button and drag. Stops drawing
+when you release the mouse.
+2. The user can change colors by pressing keys on the keyboard - you decide
+what key means what color(numbers `1`, `2`, `3`, etc or specific letters
+  `a`, `b`, `c`, etc).
+3. The user can change thickness of the line by pressing keys on the keyboard -
+you decide what key means what thickness(numbers or specific letters).
+Or could chose to use only 2 keys
+for this: one key to increase the thickness (`+`?) and another to decrease
+the thickness (`-`?).
+4. Challenge 1: eraser - the eraser is activated by holding down the spacebar
+and moving the mouse around. When you release the spacebar, it stops erasing.
+The eraser also uses the same thickness as the strokes and so you can
+change its thickness using the method you implemented in \#3.
+5. Challenge 2: LOL Cat Stamp - have a specific key (`l`?) on the keyboard (your
+  choice) activate the LOL Cat Stamp tool. It will print a LOL cat image on the
+  canvas every time you click - at the location of the click. Press the same key
+  again to deactivate the LOL Cat Stamp.
+6. Challenge 3: rectangle tool - have a specific key (`r`?) on the keyboard activate
+the rectangle tool. Instead of drawing a line between the last mouse position
+and the current `event.pos`, when the rectangle tool is activated, it will
+fill a rectangle using the last position as one corner and the `event.pos`
+as the opposite corner. Press the same key again to deactivate the rectangle
+tool.
+7. Draw your master piece drawing, take a screenshot of it and send it to me :)

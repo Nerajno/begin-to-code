@@ -66,7 +66,8 @@ body {
   max-width: 100%;
 }
 
-#slide-contents ul {
+#slide-contents ul,
+#slide-contents ol {
   text-align: left;
 }
 
