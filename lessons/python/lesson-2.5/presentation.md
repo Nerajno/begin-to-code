@@ -105,11 +105,11 @@ This expression - `a_list[1]` returns the content of cell number
 ## What will this print?
 ```python
 a_list = [1, 5, 2, 3, 4]
-print a_list[1]
-print a_list[3]
-print a_list[4]
-print a_list[2]
-print a_list[0]
+print (a_list[1])
+print (a_list[3])
+print (a_list[4])
+print (a_list[2])
+print (a_list[0])
 ```
 ---
 It's time for a challenge! What will this program print?
