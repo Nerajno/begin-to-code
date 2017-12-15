@@ -51,9 +51,9 @@ and concatenates them together one by one to form the word "bananas".
 ## Accumulator Pattern with Strings
 
 ```python
-result = ''
+[[result = '']][[accumulator variable]]
 letters = ['b', 'a', 'n', 'a', 'n', 'a', 's']
-[[i = 0]][[accumulator variable]]
+i = 0
 while i < len(letters):
   letter = letters[i]
   result = result + letter
@@ -62,9 +62,10 @@ while i < len(letters):
 
 ---
 Just as with any other piece of code using the accumulator pattern,
-this one has an accumulator variable. We initialize this variable to the
-empty string at the beginning, and as the code runs, it will add a letter
-to this string variable one by one.
+this one has an accumulator variable. In this programe, we used `result`.
+We initialize this variable to the empty string at the beginning, and
+as the code runs, it will add a letter
+to `result` one by one.
 ***************************************
 ## Accumulator Pattern with Strings
 
@@ -79,7 +80,7 @@ i = 0
 ```
 
 ---
-It has a loop.
+As it is an accumulator pattern, it also has a loop.
 ***************************************
 ## Accumulator Pattern with Strings
 
@@ -94,9 +95,9 @@ while i < len(letters):
 ```
 
 ---
-And it has an accumulator statement which adds to the accumulator variable
-for each iteration of the loop. The difference is that this time, it is
-concatenating to a string, rather than adding to a number.
+Finally, it has an accumulator statement which adds to the accumulator variable
+`result` for each iteration of the loop. The difference is that this time,
+it is concatenating to a string, rather than adding to a number.
 ***************************************
 ## Accumulator Pattern with Strings
 
@@ -132,7 +133,7 @@ Kiwi
 Since so many of our problems require loops, it'd be nice if writing loops
 were more convenient. Fortunately, there is a way: the for-loop.
 
-This is a for-loop in Python. A for loop is used to iterate through a list of
+This is a for loop in Python. A for loop is used to iterate through a list of
 items.
 ***************************************
 ## Looping short-hand: for loops
@@ -144,7 +145,7 @@ fruit_list = ['Apple', 'Orange', 'Banana', 'Kiwi']
 ```
 
 ---
-A for-loop contains a for-in statement.
+A for loop contains a for-in statement.
 ***************************************
 ## Looping short-hand: for loops
 
@@ -181,7 +182,7 @@ for fruit [[in]][[in keyword]] fruit_list:
   print(fruit)
 ```
 ---
-There there is the "in" keyword.
+Then there is the "in" keyword.
 ***************************************
 ## Looping short-hand: for loops
 
@@ -208,7 +209,7 @@ This is the body of the loop. Because there are 4 fruits in this list,
 This print statement will execute 4 times, each time printing one of the
 fruits.
 ***************************************
-## for loop vs while loop
+## For loop vs While loop
 
 With for loop:
 ```python
@@ -601,7 +602,8 @@ Here we need to take care to wrap the letter we want to add inside of a new
 list (the list only contains the one element) so that we can concatenate
 it with the result_list.
 
-Now it is possible to modify this code to reverse the letters ;)
+Now it is possible to modify this code to reverse the letters ;) But we'll
+leave that as an exercise for the homework.
 ***************************************
 ## Upper method
 
@@ -610,8 +612,8 @@ a_str.upper()
 ```
 
 ---
-To prep you for some of the exercises, you'll need to know how to convert
-letters between uppercase and lowercase.
+To prep you for some of the homework exercises, you'll need to know how to
+convert letters between uppercase and lowercase.
 
 The upper method on the string object takes the original string, converts
 all its letters to uppercase if they are not already, and returns the converted
@@ -644,7 +646,7 @@ a_str.lower()
 
 ---
 Conversely, there is a `lower` method on strings as well for converting
-letters to lowercase. Now!! I think you are ready.
+letters to lowercase.
 
 **************************************
 ## Summary
