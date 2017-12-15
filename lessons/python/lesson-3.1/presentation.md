@@ -430,7 +430,7 @@ Let's go into more detail about the append method.
 a_list = ["a", "b"]
 ```
 
-![a_list](/lessons/python/lesson-3.1/append-1.png)
+![a_list](./lessons/python/lesson-3.1/append-1.png)
 
 ---
 If you start out with this list.
@@ -441,14 +441,14 @@ If you start out with this list.
 a_list.append("c")
 ```
 
-![a_list](/lessons/python/lesson-3.1/append-1.png)
+![a_list](./lessons/python/lesson-3.1/append-1.png)
 
 ---
 Then you append a new letter "c" to it. You get
 ***************************************
 ## The append method
 
-![a_list](/lessons/python/lesson-3.1/append-2.png)
+![a_list](./lessons/python/lesson-3.1/append-2.png)
 
 ---
 c appended to the end of the list.
@@ -558,7 +558,7 @@ d = ["!"]
 e = a + b + c + d
 ```
 
-![Concatenating Lists](/lessons/python/lesson-3.1/list-concat.png)
+![Concatenating Lists](./lessons/python/lesson-3.1/list-concat.png)
 
 ---
 There is an alternative to using append to add to a list: concatenation.
