@@ -10,25 +10,6 @@ numbers = [1, 5, 2, 3, 4, 8, 7]
 
 Go through and print each one.
 
-## Prices
-
-```python
-prices = [12.50, 23.99, 50.00, 23.45, 45.95, 72.50, 100.00]
-```
-
-You have a list of the prices of some items. Loop through them and print
-them out one by one, with a `$` sign in front of each, like:
-
-```
-$12.50
-$23.99
-$50.00
-$23.45
-$45.95
-$72.50
-$100.00
-```
-
 ## If You're Happy and You Know It...
 
 You will print the lyrics to the song: [If You're Happy and You Know it](https://en.wikipedia.org/wiki/If_You%27re_Happy_and_You_Know_It).
@@ -50,6 +31,25 @@ endings = [
 ```
 
 Iterate through each one in order to print the complete lyrics of the song.
+
+## Prices
+
+```python
+prices = [12.50, 23.99, 50.00, 23.45, 45.95, 72.50, 100.00]
+```
+
+You have a list of the prices of some items. Loop through them and print
+them out one by one, with a `$` sign in front of each, like:
+
+```
+$12.50
+$23.99
+$50.00
+$23.45
+$45.95
+$72.50
+$100.00
+```
 
 ## Discounts
 
