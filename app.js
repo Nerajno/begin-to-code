@@ -24,7 +24,7 @@ $(function() {
       } else if (path.length === 2) {
         lessonIndex = _.findIndex(lessons, function(l) { return l.path === path[0] });
         pageIndex = Number(path[1]);
-        console.log('lessonIndex', lessonIndex, 'pageIndex', pageIndex);
+        // console.log('lessonIndex', lessonIndex, 'pageIndex', pageIndex);
         startLesson();
       } else {
         throw new Error('Invalid path: ' + location.hash);
@@ -114,6 +114,7 @@ $(function() {
       //   return ''; // use external default escaping
       // }
     }).render(md);
+    console.log('html', html);
     html = postprocess(html);
     return html;
   }
@@ -122,9 +123,10 @@ $(function() {
     return md;
   }
 
-  function postprocess(md) {
-    md = md.replace(/\[\[((?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
-    return md;
+  function postprocess(html) {
+    html = html.replace(/\[\[\[((?:.|[\n])*?)\]\]\]/g, '<span class="highlight">$1</span>');
+    html = html.replace(/\[\[((?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
+    return html;
   }
 
   function splitSlides(html) {

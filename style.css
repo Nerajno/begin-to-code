@@ -122,3 +122,8 @@ code {
 #toolbar {
   position: absolute;
 }
+
+.highlight {
+  background-color: yellow;
+  color: black;
+}
