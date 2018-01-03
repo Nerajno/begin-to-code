@@ -659,7 +659,14 @@ a new `fahrenheit` variable. And so now we are ready to print it out.
 ---
 There is the print out that says "It is 53.60 °F".
 
-Now that you know calling a function works. Let's see one more
+Now, you may [Walk through it in Python Tutor on your own](http://pythontutor.com/visualize.html#code=def%20convert_c2f%28c%29%3A%0A%20%20%20%20f%20%3D%20c%20*%209%20/%205%20%2B%2032%0A%20%20%20%20return%20f%0A%0Acelsius%20%3D%20float%28input%28%22How%20cold%20is%20it%20%28%C2%B0C%29%3F%20%22%29%29%0Afahrenheit%20%3D%20convert_c2f%28celsius%29%0Aprint%28%22It%20is%20%25.2f%20%C2%B0F.%22%20%25%20fahrenheit%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false).
+**********************************************
+## Executing a Function
+
+![Step 8](./lessons/python/lesson-9/images/pt-end.png)
+
+---
+Now that you know how calling a function works. Let's see one more
 complex example of function usage.
 **********************************************
 ## Problem: Reverse the Words
