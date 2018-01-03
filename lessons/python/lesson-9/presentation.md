@@ -510,18 +510,19 @@ and you would get this error.
 ## The Frame
 
 ```python
-def equation(m, c):
-    c_squared = c * c
-    e = m * c_squared
-    return e
+def convert_c2f(c):
+    f = c * 9 / 5 + 32
+    return f
 
-result = equation(5, 299792458)
+celsius = float(input("How cold is it (°C)? "))
+fahrenheit = convert_c2f(celsius)
+print("It is %.2f °F." % fahrenheit)
 ```
 
 ---
-Let's look at another example now. This one has to do with a famous
-physics equation. This time, we want to focus on the *frame* of a
-function when it is executed in Python Tutor.
+Now, we are going to step through this program in Python Tutor.
+We are going to focus on the *frame* of a function when it is executed
+in Python Tutor.
 **********************************************
 ## Executing a Function
 
@@ -529,7 +530,9 @@ function when it is executed in Python Tutor.
 
 ---
 As we step through this code, watch closely to see what happens to the
-"Frames" section. So far, the only frame we have seen is the global frame,
+"Frames" section.
+
+So far, the only frame we have seen is the global frame,
 which stores the names and the values of our variables. When
 you call a function, a new frame gets created that will be used to store
 the variables that are local to (belongs to) that function.
@@ -541,10 +544,10 @@ the variables that are local to (belongs to) that function.
 ---
 Okay, let's get started!!
 
-As you can see, at the beginning of the program, there isn't anything there
-in the global frame.
+At the beginning of the program, there isn't anything there
+in the frames section.
 
-The first line of this program defines the equation function. Let's see
+The first line of this program defines a function. Let's see
 what happens when we step.
 **********************************************
 ## Executing a Function
@@ -552,86 +555,86 @@ what happens when we step.
 ![Step 2](./lessons/python/lesson-9/images/pt-step2.png)
 
 ---
-The moment you execute the `def` statement, the function is defined
+Once you execute the `def` statement, the function is defined
 in the global frame. As you can see, a function is stored in the same
-way as a variable is stored. The function has a name --- equation,
-this also happens to be its slot name in the global frame. The function
-itself is stored in the objects section, and is pointed to by the
-"equation" slot.
+way as a variable is stored.
 
-Now, we are on line 6, which will call the equation function that we've
-just defined. Let's see what happens.
+The function's name convert_c2f is the slot name in the global frame.
+The function itself is stored in the objects section, and is pointed
+to by the slot.
+
+Now, we are on line 5, which will prompt the user to enter a number.
 **********************************************
 ## Executing a Function
 
 ![Step 3](./lessons/python/lesson-9/images/pt-step3.png)
 
 ---
-A new frame called "equation" has been created in the frames section,
-and it already contains two variables: m and c, which correspond to the
-parameters. Their respective values were passed in from the argument list
-on line 6: 5 and 299792458.
+I entered 12 when I was prompted "How cold is it °C?", and so now the
+`celcius` variable has been created and contains the value 12.
+
+Next, we will actually call the `convert_c2f` function we've defined. Let's
+see what happens.
+**********************************************
+## Executing a Function
+
+![Step 3](./lessons/python/lesson-9/images/pt-step4.png)
+
+---
+When the function is called, a new frame called "convert_c2f" has been
+added to the frames section, and it already contains one variable:
+`c`, which contains the value 12.
+
+The value of 12 was passed in from the
+argument list in the function call on line 6: `convert_c2f(celsius)`
+, and `c` is the name of the parameter on the inside of the function.
+
+So the value of `celsius` on the outside of the function is passed to `c`
+on the inside of the function.
 
 And now the program counter is on line 1 --- the beginning of the
-equation function.
+`convert_c2f` function.
 
 Step...
 **********************************************
 ## Executing a Function
 
-![Step 4](./lessons/python/lesson-9/images/pt-step4.png)
+![Step 4](./lessons/python/lesson-9/images/pt-step5.png)
 
 ---
-This is the *real* first line of the function. It creates a new variable
-`c_squared` and assigns to it the result of multiplying c by itself.
+Now we are on line 2, the *real* first line of the function.
+It creates a new variable
+`f` and assigns to it the result of performing the calculations for the
+unit conversion equation.
 
 Step over that, and...
 **********************************************
 ## Executing a Function
 
-![Step 5](./lessons/python/lesson-9/images/pt-step5.png)
+![Step 5](./lessons/python/lesson-9/images/pt-step6.png)
 
 ---
-the `c_squared` variable has been created with the value of
-89875517873681760, as you can see in the "equation" frame.
+the `f` variable has been created with the value of
+53.6 --- the calculated result.
 **********************************************
 ## Executing a Function
 
-![Step 5](./lessons/python/lesson-9/images/pt-step5.png)
+![Step 5](./lessons/python/lesson-9/images/pt-step6.png)
 
 ---
 
-The next line: line 3 creates a new variable e and assigns to it the
-result of multiplying `m` with `c_squared`.
-
-Step over this line, and...
-**********************************************
-## Executing a Function
-
-![Step 6](./lessons/python/lesson-9/images/pt-step6.png)
-
----
-there is e in the "equation" frame. Its value turns out to be
-449377589368408800 --- based on the calculation.
-**********************************************
-## Executing a Function
-
-![Step 6](./lessons/python/lesson-9/images/pt-step6.png)
-
----
-Finally, we have the return statement in this function, which supplies
-an output value back to the caller of this function...
+Next, we will return the value of `f` as the return value of this function.
 **********************************************
 ## Executing a Function
 
 ![Step 7](./lessons/python/lesson-9/images/pt-step7.png)
 
 ---
-Python Tutor shows us that the return value of this function is
-449377589368408800 --- which was gotten from the current value of e.
+When the return statement is executed, Python Tutor shows us that the
+return value of this function (in red), which in this case is 53.6.
 
-Now, when we step again, what do you think happens to the equation frame?
-Make your prediction, and then go to the next slide.
+When we step again, what do you think happens to the convert_c2f frame?
+Make your prediction, and then go to the next slide to find out.
 **********************************************
 ## Executing a Function
 
@@ -645,12 +648,17 @@ executing, the frame that was created to store its variables disappears,
 because they are no longer needed. A frame is like scratch paper for you
 to work out the solution of a math problem, but once you have the answer,
 you don't need it anymore.
+
+Due to line 6, we have save the return value of the function call into
+a new `fahrenheit` variable. And so now we are ready to print it out.
 **********************************************
 ## Executing a Function
 
-![Step 8](./lessons/python/lesson-9/images/pt-step8.png)
+![Step 8](./lessons/python/lesson-9/images/pt-end.png)
 
 ---
+There is the print out that says "It is 53.60 °F".
+
 Now that you know calling a function works. Let's see one more
 complex example of function usage.
 **********************************************
