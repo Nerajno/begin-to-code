@@ -76,7 +76,7 @@ body {
 }
 
 #slide-contents img {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 #slide-contents pre code {
@@ -101,7 +101,7 @@ body {
 
 #slide-contents p {
   text-align: left;
-  margin: 1em 3em;
+  margin: 1em 1em;
 }
 
 code {
