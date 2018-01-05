@@ -114,3 +114,9 @@ function, write:
 
 If you'd like, you can send this to your mentor(s) and get feedback on it
 before you start implementing the code.
+
+### Testing in Isolation
+
+When working on individual functions, make sure you test each function in
+isolation as you are working on it. When you've tested a function to your
+satisfaction, only then should you move on.

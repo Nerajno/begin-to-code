@@ -1,6 +1,5 @@
 # Lesson 5
-## String Manipulation 2
-### and
+## String Manipulation 3:
 ## The State Machine Pattern
 ---
 In this lesson we will do more string manipulation,
@@ -16,34 +15,57 @@ states based on the inputs it encounters and a predefined set of rules.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 1](./lessons/python/lesson-5/toggle-switch-1.jpg)
+![Toggle Switch 1](./lessons/python/lesson-5/images/toggle.png)
 
 ---
 This is an example of a simple state machine - that for a toggle light switch.
-We have two states, represented as circles: the "off" and the "on" states.
-At the start of the program - represented with the "start" arrow, the program is
-put into the "off" state.
-
-An arrow represents an event, of which "start" is one.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 2](./lessons/python/lesson-5/toggle-switch-2.jpg)
+![The states](./lessons/python/lesson-5/images/toggle-states.png)
 
 ---
-A "push" event is another event this program responds to, and it causes its
-state to transition from "off" to "on" - in the event that it was previously
-in the "off" state.
+We have two states, represented as circles: the "off" and the "on" states.
+******************************************
+## State Machine Example: Toggle Switch
+
+![The states](./lessons/python/lesson-5/images/toggle-events.png)
+
+---
+We have some some events, represented as arrows.
+
+This diagram has a "start" event, and 2 "push" events.
+******************************************
+## State Machine Example: Toggle Switch
+
+![The states](./lessons/python/lesson-5/images/toggle-start.png)
+
+---
+At the start of the program - represented with the "start" arrow, the program is
+put into the "off" state.
+
+"start" is a synthetic event and will not actually
+be represented in the Python code example we shall see later.
+******************************************
+## State Machine Example: Toggle Switch
+
+![Toggle Switch 2](./lessons/python/lesson-5/images/toggle-push-1.png)
+
+---
+"push" is an event that happens whenever someone pushes the button.
+
+When the machine is in the "off" state, the "push" event causes the machine's
+state to transition from "off" to "on".
 
 The changing of the state of a state machine is called a *state transition*.
 ******************************************
 ## State Machine Example: Toggle Switch
 
-![Toggle Switch 3](./lessons/python/lesson-5/toggle-switch-3.jpg)
+![Toggle Switch 3](./lessons/python/lesson-5/images/toggle-push-2.png)
 
 ---
-If another "push" event is sent to the program in its "on" state, it transitions
-back to the "off" state.
+When the machine is in the "on" state, and it receives a push event,
+it transitions back to the "off" state.
 
 This is how a light switch works, more or less.
 ******************************************
@@ -64,7 +86,7 @@ for event in event_list:
       pass
 ```
 ---
-This the Python code that would implement this
+This is the Python code that would implement this
 state machine. Let's take a closer look.
 ******************************************
 ## Toggle Switch
@@ -329,6 +351,8 @@ the turnstile was pushed.
 
 ![Turnstile](./lessons/python/lesson-5/turnstile-state-machine.png)
 
+[Image from Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine#/media/File:Turnstile_state_machine_colored.svg)
+
 ---
 If the turnstile is in the locked state, and it gets a coin inserted, it
 goes into the unlocked state, where the turnstile can actually be turned.
@@ -341,6 +365,8 @@ remains in the locked state.
 
 If someone puts a coin in while it is already unlocked, it remains unlocked,
 and they have just lost a coin for nothing!
+
+Now let's see what the Python code for this looks like!!
 *******************************************
 ```python
 state = 'locked'
@@ -383,6 +409,7 @@ for event in event_list:
 ```
 ---
 The state variable, which this time can be either "locked", or "unlocked".
+It starts out in the "locked" state.
 *******************************************
 ```python
 state = 'locked'
@@ -404,7 +431,7 @@ for event in event_list:
 ```
 ---
 We also have an `event_list` as well, to represent the series of events that
-occurred to the state machine.
+occurred to the state machine. The events can be either "coin", or "push".
 *******************************************
 ```python
 state = 'locked'
@@ -446,7 +473,7 @@ for event in event_list:
       state = 'locked'
 ```
 ---
-And we have a big if statement that decides what do do if the state is locked...
+And we have a big if statement that decides what to do if the state is locked...
 *******************************************
 ```python
 state = 'locked'
@@ -491,10 +518,8 @@ for event in event_list:
 Note that the turnstile also uses an extra variable `num_coins` that keeps
 track of how many coins it has.
 
-So, that is the turnstile. See that you follow what's going on by walking it
-through Python Tutor.
-
-Next, let's get to a more practical example.
+Please see that you follow what's going on by
+walking it step by step through Python Tutor.
 *********************************************
 ## Problem: Text to HTML
 
@@ -510,6 +535,8 @@ to this HTML code
 This <em>is</em> the next big thing.
 ```
 ---
+Now, let's get to a more practical example.
+
 Let's say that you are given this problem:
 
 Convert the text you see above
@@ -602,7 +629,7 @@ accumulator pattern.
 
 Can you spot the *accumulator variable* and the *accumulator* statements?
 
-The next slide will reveal them.
+The next slides will reveal them.
 ***********************************************
 ```python
 sentence = 'This *is* the next big thing.'
@@ -612,18 +639,105 @@ for char in sentence:
   if state == 'open':
     if char == '*':
       state = 'emphasis'
-      [[new_sentence += '<em>']][[accumulator]]
+      new_sentence += '<em>'
     else:
-      [[new_sentence += char]][[accumulator]]
+      new_sentence += char
   elif state == 'emphasis':
     if char == '*':
       state = 'open'
-      [[new_sentence += '</em>']][[accumulator]]
+      new_sentence += '</em>'
     else:
-      [[new_sentence += char]][[accumulator]]
+      new_sentence += char
 ```
 ---
-Are they what you expected?
+`new_sentence` is the accumulator variable.
+***********************************************
+```python
+sentence = 'This *is* the next big thing.'
+new_sentence = ''
+state = 'open'
+for char in sentence:
+  if state == 'open':
+    if char == '*':
+      state = 'emphasis'
+      [[new_sentence += '<em>']][[Accumulator statement 1]]
+    else:
+      new_sentence += char
+  elif state == 'emphasis':
+    if char == '*':
+      state = 'open'
+      new_sentence += '</em>'
+    else:
+      new_sentence += char
+```
+---
+This is an accumulator statement.
+***********************************************
+```python
+sentence = 'This *is* the next big thing.'
+new_sentence = ''
+state = 'open'
+for char in sentence:
+  if state == 'open':
+    if char == '*':
+      state = 'emphasis'
+      new_sentence += '<em>'
+    else:
+      [[new_sentence += char]][[Accumulator statement 2]]
+  elif state == 'emphasis':
+    if char == '*':
+      state = 'open'
+      new_sentence += '</em>'
+    else:
+      new_sentence += char
+```
+---
+This is another accumulator statement.
+***********************************************
+```python
+sentence = 'This *is* the next big thing.'
+new_sentence = ''
+state = 'open'
+for char in sentence:
+  if state == 'open':
+    if char == '*':
+      state = 'emphasis'
+      new_sentence += '<em>'
+    else:
+      new_sentence += char
+  elif state == 'emphasis':
+    if char == '*':
+      state = 'open'
+      [[new_sentence += '</em>']][[Accumulator statement 3]]
+    else:
+      new_sentence += char
+```
+---
+This is another,
+***********************************************
+```python
+sentence = 'This *is* the next big thing.'
+new_sentence = ''
+state = 'open'
+for char in sentence:
+  if state == 'open':
+    if char == '*':
+      state = 'emphasis'
+      new_sentence += '<em>'
+    else:
+      new_sentence += char
+  elif state == 'emphasis':
+    if char == '*':
+      state = 'open'
+      new_sentence += '</em>'
+    else:
+      [[new_sentence += char]][[Accumulator statement 4]]
+```
+---
+And this is yet another.
+
+There are 4 different accumulator statements in this program, each one
+adding to the accumulator variable a slightly different way.
 ***********************************************
 ```python
 sentence = 'This *is* the next big thing.'
@@ -668,7 +782,7 @@ for char in sentence:
       new_sentence += char
 ```
 ---
-Well the state variable should be obvious enough, since it's literally called
+Well, the state variable should be obvious enough, since it's literally called
 `state`.
 ***********************************************
 ```python
@@ -690,19 +804,36 @@ for char in sentence:
       new_sentence += char
 ```
 ---
-The sequence of events was less obvious. It's actually the sequence of characters
-in the `sentence`.
+The sequence of events was less obvious. It's actually the sequence of
+characters in the `sentence` variable.
 
 *What? You can do that?*
 
-*Yes! You can!*
+*Yes! Yes, you can!*
 
-I am the instructor, and I said you can, so you can.
-
-Each character in `sentence` is like an event occurring to our state machine,
-which acts like a toggle switch, in that whenever it see an asterisk (\*), it
-toggles its state from "open" to "emphasis", and vice versa.
-
+Each character in `sentence` is like an event occurring to our state machine.
+Our state machine acts like a toggle switch, in that whenever it see an
+asterisk (\*), it toggles its state from "open" to "emphasis", and vice versa.
+***********************************************
+```python
+sentence = 'This *is* the next big thing.'
+new_sentence = ''
+state = 'open'
+for char in sentence:
+  if state == 'open':
+    if char == '*':
+      state = 'emphasis'
+      new_sentence += '<em>'
+    else:
+      new_sentence += char
+  elif state == 'emphasis':
+    if char == '*':
+      state = 'open'
+      new_sentence += '</em>'
+    else:
+      new_sentence += char
+```
+---
 The presence of the state variable, is how it knows when to output an open tag
 `<em>` - when it is transitioning from the "open" state to the "emphasis" state,
 and when to output a close tag `</em>`, when its transitioning back from the
@@ -884,8 +1015,8 @@ That's it for this lesson. Here is what you learned.
 ***********************************************
 ## Exercises
 
-[To the exercises!](https://gist.github.com/airportyh/283d98c18b3d2947513782d0fcf76e48)
+[To the exercises!](https://gist.github.com/airportyh/c81e0179593899472f46f33ab141a699)
 
 ---
 Please attempt to complete these exercises to the best of your ability, but
-don't resist ask questions.
+don't resist asking questions.
