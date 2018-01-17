@@ -1,7 +1,6 @@
 # Lesson 2: If Statements
 ---
-In this lesson, we'll cover the if-statement, the while loop statement,
-and string formatting in Python for more precise printing.
+In this lesson, we'll cover the if-statement.
 ***************************************************
 ## if statement
 
@@ -13,7 +12,8 @@ if age >= 21:
 
 ---
 Let's jump right into it. This is the if statement. It performs a set
-of statements given that a condition is met.
+of statements if a specified condition is met, and does not perform them
+if it is not met.
 ***************************************************
 ## if statement
 
@@ -69,7 +69,7 @@ if age [[>=]][[Greater-than-or-equal-to operator]] 21:
 Within a predicate, we can use comparison operators such as
 `>`, `>=`, `==`, `<`, `<=`, and more. In this case, `>=` is
 the greater-than-or-equal-to operator, and it will return
-true if the value on the left-hand size --- in this case the `age` variable
+true if the value on the left-hand side --- in this case the `age` variable
 --- is greater or equal to the value on the right-hand side --- in this case
 21, and return false otherwise.
 ***************************************************
@@ -150,14 +150,41 @@ The else clause also has an indented block.
 if age >= 21:
   print("You are old enough")
   print("Please come in")
+else[[:]][[The colon]]
+  print("Come back in a few years")
+```
+
+---
+See again: the mandatory colon.
+***************************************************
+## if statement: else clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
 else:
-  [[print("Come back in a few years")]][[alternate block]]
+ →print("Come back in a few years")
+```
+
+---
+And again the mandatory indentation.
+***************************************************
+## if statement: else clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
+else:
+[[  print("Come back in a few years")]][[Alternate block]]
 ```
 
 ---
 The block within the else
 statement is called the *alternate block*, and it will
-execute when the if statement's conditional clause evaluates to false.
+execute when the if statement's conditional clause --- in this case
+`age >= 21` evaluates to false.
 ***************************************************
 ## if statement: elif clause
 
@@ -174,8 +201,8 @@ else:
 ```
 
 ---
-In additional to the `else` clause, there is also an `elif` clause, which
-is short for "else if".
+In additional to the `else` clause, there is also an optional `elif` clause,
+which is short for "else if".
 ***************************************************
 ## if statement: elif clause
 
@@ -226,7 +253,7 @@ else:
 ```
 
 ---
-The elif clause starts with the elif keyword.
+The elif clause starts with the `elif` keyword.
 ***************************************************
 ## if statement: elif clause
 
@@ -268,8 +295,8 @@ as well as a consequent clause.
 [[if age >= 21:
   print("You are old enough")
   print("Please come in")]][[starting if clause]]
-[[elif age >= 18:
-  print("You are technically an adult, but still not old enough")]][[elif clause]]
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
 elif age >= 13:
   print("You are a teenager")
 else:
@@ -281,9 +308,132 @@ An elif clause must come after a starting if clause.
 
 An elif clause's conditional will only be evaluated (considered) in the event
 that the conditional clause of the if statement --- or that of another
-elif statement --- evaluated to false. Thus, if `age` was 25, and therefore
-greater than 21, it will not evaluate the `age >= 18` conditional in the first
-elif clause.
+elif statement ahead of it --- evaluated to false.
+***************************************************
+## if statement: elif clause
+
+```python
+if [[age >= 21]][[Is 25 greater than 21?]]:
+  print("You are old enough")
+  print("Please come in")
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+```
+
+---
+Let's suppose that `age` was 25, and therefore greater than 21, making
+the conditional clause a true statement,
+***************************************************
+## if statement: elif clause
+
+```python
+if age >= 21:
+[[  print("You are old enough")
+  print("Please come in")]][[Program executes these]]
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+```
+
+---
+The program therefore executes these statements.
+***************************************************
+## if statement: elif clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+[[  →]][[Skips to here]]
+```
+
+---
+And then the program skips to the end of of all the clauses of the if
+statement.
+***************************************************
+## if statement: elif clause
+
+```python
+if [[age >= 21]][[Is 19 greater than 21?]]:
+  print("You are old enough")
+  print("Please come in")
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+```
+
+---
+If age was 19, and therefore not greater than or equal to 21, this conditional
+would be false,
+***************************************************
+## if statement: elif clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
+elif [[age >= 18]][[Is 19 greather than or equal to 18?]]:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+```
+
+---
+Which allows the next conditional to the evaluated. In the case of this
+elif statement, the conditional returns true.
+***************************************************
+## if statement: elif clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
+elif age >= 18:
+  [[print("You are technically an adult, but still not old enough")]][[Execute this]]
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+```
+
+---
+Which means the code will reach its consequent block.
+***************************************************
+## if statement: elif clause
+
+```python
+if age >= 21:
+  print("You are old enough")
+  print("Please come in")
+elif age >= 18:
+  print("You are technically an adult, but still not old enough")
+elif age >= 13:
+  print("You are a teenager")
+else:
+  print("You are a baby")
+[[  →]][[Skips to here]]
+```
+
+---
+And then skip to the end.
 ***************************************************
 ## if statement: else clause
 
@@ -301,6 +451,8 @@ elif age >= 13:
 
 ---
 An else clause --- if one exists --- must come after any if and elif clauses.
+And the statements in its alternate block will only execute if all of the
+conditional clauses in the preceding statements have evaluated to false.
 ***************************************************
 ## if statement: order of clauses
 
@@ -469,8 +621,8 @@ elif answer == "sunny":
 ```
 
 ---
-What would happen if the user typed in something other than the words rainy or
-sunny?
+What would happen if the user typed in something other than the words "rainy" or
+"sunny"?
 
 Please make your prediction, and then run this code in Python Tutor to find
 out the answer.
@@ -554,6 +706,26 @@ Now, what if they type in something we don't understand?
 
 Modify this program to say "Sorry, I don't understand what you said." if
 they typed a different response to the above 3.
+
+See solution in the next slide.
+***************************************************
+## Full Age Example
+
+Solution:
+```python
+answer = input("How's the weather? (sunny, rainy, or cloudy) ")
+if answer == "rainy":
+  print("Let's stay home and watch TV.")
+elif answer == "sunny":
+  print("Let's go outside and play!")
+elif answer == "cloudy":
+  print("Let's go outside and play anyway!")
+else:
+  print("Sorry, I don't understand what you said.")
+```
+
+---
+This is the solution --- to add an else clause.
 ***************************************************
 ## Nested If Statements
 
@@ -698,7 +870,7 @@ elif coffee == "latte":
 ```
 
 ---
-which has to decide what price to charge based on the size. This is the
+Then it has to decide what price to charge based on the size. This is the
 conditional to test for small.
 
 Let's say the size the user entered was "big". It would skip this consequent
@@ -743,7 +915,7 @@ elif coffee == "latte":
 
 ---
 the program executes the consequent clause for if the size is big, and prints
-the size of a big coffee.
+the price of a big coffee.
 ***************************************************
 ## Coffee Solution
 
@@ -777,6 +949,8 @@ latte big and see it go through each branch of the nested if statements.
 * nested if statements
 
 ---
+You made it to the end. Wow!!!
+
 In this lesson, you learned about the if statement.
 ***************************************************
 ## Homework

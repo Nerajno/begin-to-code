@@ -112,12 +112,44 @@ phrases or words. Convert the part inside the asterisk to red. So:
 `Pass me the *french fries*!` should convert to `Pass me the \033[31mfrench fries\033[0m`. In the terminal (not in Python Tutor) the french fries should
 look red.
 
-## Exercise 4
+## Exercise 8
 
-Extend the above exercise to convert text surrounded by understores (\_) to
-yellow. So `This Sunday the _Browns_ are playing vs the *Reds*.` should
-convert to `This Sunday the \033[33mBrowns\033[0m are playing vs the \033[31mreds\033[0m`. In the terminal (not not in Python Tutor) the word
+Extend your solution to exercise 7 to to convert text surrounded by underscores
+(\_) to yellow. So `This Sunday the _Browns_ are playing vs the *Reds*.`
+should convert to `This Sunday the \033[33mBrowns\033[0m are playing vs the \033[31mreds\033[0m`. In the terminal (not not in Python Tutor) the word
 Brow should be in yellow.
+
+## Exercise 9
+
+Extend your solution to exercise 8:
+one more color code to the above --- text surrounded by dollar signs ($)
+should be displayed in green.
+
+## Exercise 10
+
+Now, make it so that the user can color-code their text by specifying the
+color code directly in their text. Using this syntax:
+
+```
+[text:color code]
+```
+
+The expression will result in `text` being colored with the specified color code.
+For example, the user input:
+
+ `I like to program in [Python:34] and [HTML:32].`
+
+ Will result in the word Python being in blue and HTML being in green.
+
+ You will need 3 states:
+
+ 1. open --- for the text not in square brackets
+ 2. collecting_text --- when it is collecting text to be rendered in color
+ 3. collecting_code --- when it is collecting the color code to be used
+
+ You'll need to declare two more accumulator variables before your loop,
+ one for collecting the text, and another for collecting the digits for the
+ code to use in the color-coding.
 
 ## Bonus Challenge!!!
 
