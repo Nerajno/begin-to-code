@@ -27,6 +27,22 @@ pippen   = Record(name="Scottie Pippen",     num=8,  pos="SF", gp=6, pts=48, fgm
 robinson = Record(name="David Robinson",     num=5,  pos="C",  gp=6, pts=71, fgm=32, fga=42)
 stockton = Record(name="John Stockton",      num=12, pos="PG", gp=2, pts=10, fgm=5,  fga=6 )
 
+
+
+# barkley  = Record(name="Charles Barkley",    gp=6, pts=98, fgm=34, fga=58)
+# bird     = Record(name="Larry Bird",         gp=2, pts=19, fgm=8,  fga=11)
+# clyde    = Record(name="Clyde Drexler",      gp=5, pts=69, fgm=27, fga=39)
+# ewing    = Record(name="Patrick Ewing",      gp=5, pts=59, fgm=27, fga=43)
+# magic    = Record(name="Magic Johnson",      gp=6, pts=58, fgm=19, fga=34)
+# jordan   = Record(name="Michael Jordan",     gp=6, pts=76, fgm=29, fga=53)
+# laettner = Record(name="Christian Laettner", gp=6, pts=44, fgm=18, fga=31)
+# malone   = Record(name="Carl Malone",        gp=6, pts=89, fgm=33, fga=53)
+# mullin   = Record(name="Chris Mullin",       gp=6, pts=86, fgm=31, fga=49)
+# pippen   = Record(name="Scottie Pippen",     gp=6, pts=48, fgm=20, fga=30)
+# robinson = Record(name="David Robinson",     gp=6, pts=71, fgm=32, fga=42)
+# stockton = Record(name="John Stockton",      gp=2, pts=10, fgm=5,  fga=6 )
+
+
 dream_team = [
     barkley, bird, clyde, ewing, magic, jordan, laettner,
     malone, mullin, pippen, robinson, stockton
@@ -61,5 +77,9 @@ def higest_point_avg(players):
             highest_player = player
     return highest_player
 
-p = most_points(dream_team)
-print("The player with the most points is %s with %d points." % (p.name, p.pts))
+for player in dream_team:
+    fg_avg = 100 * player.fgm / player.fga
+    print("%s's field goal percentage is %.2f%%" % (player.name, fg_avg))
+
+# p = most_points(dream_team)
+# print("The player with the most points is %s with %d points." % (p.name, p.pts))
