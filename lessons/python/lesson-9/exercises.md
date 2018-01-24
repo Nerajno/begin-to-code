@@ -11,7 +11,7 @@ It has one return value: a number representing the number of vowels in the
 string.
 
 After you've written this function.
-Write some extra code to test this function in isolation and verify that
+Write some extra code to test this function and verify that
 it works properly.
 
 ## Price of the Ride
@@ -27,8 +27,11 @@ Write a function `price_of_the_ride(age, height)`. It has two parameters:
 
 Its return value depends:
 
-If they qualify to ride, it should the cost of the ride as a number. If they
-do not qualify to ride, the function should return `None`.
+If they qualify to ride, it should return the cost of the ride as a number.
+If they do not qualify to ride, the function should return `None`.
+
+Write some extra code to test this function and verify that
+it works properly.
 
 ## Calculate Tips
 
@@ -44,7 +47,7 @@ given; and for poor service, 10% tip should be given.
 Return value: a number representing the tip amount.
 
 After you've written this function.
-Write some extra code to test this function in isolation and verify that
+Write some extra code to test this function and verify that
 it works properly.
 
 ## Reverse a String
@@ -58,7 +61,7 @@ It has one parameter:
 
 Return value: a string - the reversed version of the string passed in.
 
-Write some extra code to test this function in isolation and verify that
+Write some extra code to test this function and verify that
 it works properly.
 
 ## Reverse the Words
@@ -71,7 +74,7 @@ It has one parameter:
 1. `string` - the string containing the sentence
 
 Return value: a string - the version of the sentence with its words reversed.
-Write some extra code to test this function in isolation and verify that
+Write some extra code to test this function and verify that
 it works properly.
 
 ## Unit Conversion

@@ -11,5 +11,6 @@
   { "title": "Lesson 7 - Pygame - Part 2", "path": "lesson-7" },
   { "title": "Lesson 8 - Pygame - Part 3", "path": "lesson-8" },
   { "title": "Lesson 9 - Functions - Part 1", "path": "lesson-9" },
-  { "title": "Lesson 10 - Records", "path": "lesson-10" }
+  { "title": "Lesson 10 - Records", "path": "lesson-10" },
+  { "title": "Lesson 11 - Dictionaries", "path": "lesson-11" }
 ]
