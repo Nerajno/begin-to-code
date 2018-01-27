@@ -165,14 +165,14 @@ the zeroth position is where we begin in computer science terms - not one.
 ```python
 a_list = [1, 5, 2, 3, 4]
 i = 0
-[[while i < 5:]][[Continuing condition]]
+[[while i < 5:]][[Repeating condition]]
   number = a_list[i]
   print("The %d-th number is %d" % (i, number))
   i = i + 1
 ```
 
 ---
-The next part of the loop counter pattern is the continuing condition.
+The next part of the loop counter pattern is the repeating condition.
 Here, the condition is `i < 5`, because we want to get to the last item
 in the list - which is the 4-th one. See, with `i < 5`, i = 4 would get
 through, but i = 5 would not - which is good, because the 5-th item does not
@@ -217,11 +217,11 @@ i = 0
 while i < 5:
   number = a_list[i]
   print("The %d-th number is %d" % (i, number))
-  [[i = i + 1]][[Incrementer statement]]
+  [[i = i + 1]][[Incrementor statement]]
 ```
 
 ---
-The last piece of the loop counter pattern is the incrementer statement.
+The last piece of the loop counter pattern is the incrementor statement.
 This increases `i` by 1, so that the next time through the loop, we get
 to the next number in the list.
 
@@ -342,7 +342,7 @@ while i < [[list_length]][[Use the length here]]:
 ```
 
 ---
-and use that for the continuing condition of the loop.
+and use that for the repeating condition of the loop.
 
 Run this through Python Tutor to see how it works step by step.
 ******************************************
@@ -434,7 +434,7 @@ The initialization statement.
 ```python
 a_list = [1, 5, 2, 3, 4]
 i = 0
-while [[i < len(a_list)]][[Continuing condition]]:
+while [[i < len(a_list)]][[Repeating condition]]:
   number = a_list[i]
   if number % 2 == 0:
     print(number)
@@ -442,7 +442,7 @@ while [[i < len(a_list)]][[Continuing condition]]:
 ```
 
 ---
-The continuing condition, and
+The repeating condition, and
 ******************************************
 ## The Loop-And-Filter Pattern
 
@@ -616,14 +616,14 @@ With its loop counter initialization statement, ...
 numbers = [3, 6, 1, 4, 2, 5]
 total = 0
 i = 0
-while [[i < len(numbers)]][[Continuing condition]]:
+while [[i < len(numbers)]][[Repeating condition]]:
   number = numbers[i]
   total = total + number
   i = i + 1
 ```
 
 ---
-Continuing condition,...
+Repeating condition,...
 ******************************************
 ## The Accumulator Pattern
 
@@ -638,7 +638,7 @@ while i < len(numbers):
 ```
 
 ---
-And the loop counter incrementer statement.
+And the loop counter incrementor statement.
 ******************************************
 ## The Accumulator Pattern
 

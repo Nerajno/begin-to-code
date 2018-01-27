@@ -8,7 +8,7 @@ Ask the user to enter a password. If they entered "open sesame", print
 ## Too Short to Ride
 
 Ask the user to enter their height in inches (remember to convert it to an
-  integer). If they are 48 inches or more, print "Go to go". Otherwise,
+  integer). If they are 48 inches or more, print "Good to go". Otherwise,
   print "You are too short to ride".
 
 ## Degree Conversion Calculator 1
