@@ -552,7 +552,8 @@ while counter <= 10:
 ```
 
 ---
-This is an example of the loop counter pattern.
+This is an example of the loop counter pattern. This
+program prints the numbers form 1 to 10.
 *************************************************
 ## Loop Counter Pattern
 

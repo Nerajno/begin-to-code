@@ -114,7 +114,6 @@ $(function() {
       //   return ''; // use external default escaping
       // }
     }).render(md);
-    console.log('html', html);
     html = postprocess(html);
     return html;
   }
