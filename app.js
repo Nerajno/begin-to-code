@@ -29,9 +29,29 @@ $(function() {
       } else {
         throw new Error('Invalid path: ' + location.hash);
       }
+      showSlides();
+      hideLessonsList();
     } else {
+      showLessonsList();
+      hideSlides();
       listLessons();
     }
+  }
+
+  function hideLessonsList() {
+    $("#lesson-list").hide();
+  }
+
+  function showLessonsList() {
+    $("#lesson-list").show();
+  }
+
+  function showSlides() {
+    $("#slide-contents").show();
+  }
+
+  function hideSlides() {
+    $("#slide-contents").hide();
   }
 
   $(window).on('hashchange', function() {

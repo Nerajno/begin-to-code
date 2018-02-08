@@ -1,22 +1,96 @@
-**********************************************
-## Executing a Function
-
-![Step 8](./lessons/python/lesson-9/images/pt-end.png)
+# Lesson 9.5
+## Functions - Part 2
 
 ---
-Now that you know how calling a function works. Let's see one more
-complex example of function usage.
+Welcome back for more on functions!!! This time
+we will use functions as a tool to decompose
+problems into smaller problems.
 **********************************************
-## Problem: Reverse the Words
+## Problem Decomposition
 
-Given a phrase entered by the user, reverse its words and print it back out.
+*Problem decomposition* is the process of taking a
+problem into a number of smaller problems.
 
 ---
-Let's do a problem that's come up before in one of your previous exercises:
-reversing the words of a phrase. Only this time, we'll be doing it with
-functions.
+
 **********************************************
-## Reverse the Words: Reverse a word
+## Problem Decomposition
+
+*Problem decomposition* is the process of taking a
+problem into a number of smaller problems.
+
+---
+Up until now, we have dealt with relatively small
+problems. Even so, we can benefit from breaking up
+a problem into smaller problems, and solve those
+smaller problems individually as functions,
+before tackling the larger problem in question.
+**********************************************
+## Reverse All Words Example
+
+Problem:
+Given a phrase containing one or more words,
+return a new version of the phrase where every one
+of its words has its letters reversed.
+
+---
+Let's take this problem as an example. If we were
+to write a recipe (a series steps) for solving this
+problem --- in  English --- what would that look like?
+
+Please do this exercise yourself with pencil and paper,
+and then move to the next slide to see my solution.
+(Note, there are multiple possible solutions, so yours
+  is not necessarily wrong if it differs.)
+**********************************************
+## Reverse All Words Recipe
+
+1. Break phrase into a list of words
+2. Iterate through each word
+    * Reverse the letter of the word
+3. Put the reversed words back together into a
+new phrase
+4. Return the new version of the phrase
+
+---
+This is what I came up with. Now, we could go ahead
+and write a program following these steps, but
+we could also selectively implement one or
+more of these steps as a function, and then have
+the code that solves the whole problem --- which will
+also be a function --- utilize that function.
+
+Yes! A function can call another function!
+**********************************************
+## Reverse All Words Recipe
+
+1. Break phrase into a list of words
+2. Iterate through each word
+    * Reverse the letter of the word
+3. Put the reversed words back together into a
+new phrase
+4. Return the new version of the phrase
+
+---
+Now, the way you decide which subproblem to break out
+as a separate function is a bit of an art --- you
+will get to practice that art later. But, for
+now I will make the choice for you...
+**********************************************
+## Reverse All Words Recipe
+
+1. Break phrase into a list of words
+2. Iterate through each word
+    * [[Reverse the letter of the word]][[write a function to do this]]
+3. Put the reversed words back together into a
+new phrase
+4. Return the new version of the phrase
+
+---
+We will write a function to reverse the letters of
+an individual word.
+**********************************************
+## Function: Reverse a Word
 
 ```python
 def reverse_word(word):
@@ -27,9 +101,7 @@ def reverse_word(word):
 ```
 
 ---
-We know that --- obviously --- one of the problems we'll need to solve
-to tackle the larger problem is: how do we reverse a word? So let's write
-a function to do just that. This is it: `reverse_word`.
+We shall name this function `reverse_word`.
 
 `reverse_word` takes a string `word` as its only parameter, and returns the
 reversed word as its return value.
@@ -75,12 +147,14 @@ not you are getting it right.
 
 In our case, we can apply the `reverse_word` function to just any old word,
 like bananas, to see that it's doing what it's supposed to do. If it works,
-that means we can move on to the next step.
+that means we can move on to the next step. [Running this code](http://pythontutor.com/visualize.html#code=def%20reverse_word%28word%29%3A%0A%20%20%20%20result%20%3D%20%22%22%0A%20%20%20%20for%20letter%20in%20word%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20letter%20%2B%20result%0A%20%20%20%20return%20result%0A%20%20%20%20%0Aprint%28reverse_word%28%22bananas%22%29%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) should
+print `sananab` in the terminal.
 **********************************************
 ## Testing Functions in Isolation
 
 ```python
 print(reverse_word("bananas"))
+print(reverse_word("blueberry"))
 print(reverse_word("a"))
 print(reverse_word(""))
 ```
@@ -90,6 +164,15 @@ In general, you want to remember to test the special cases --- like if there's
 just one character, or even an empty string --- in addition to the the
 usual suspects, because things that seem obvious often break on the special
 cases.
+
+[This program](http://pythontutor.com/visualize.html#code=def%20reverse_word%28word%29%3A%0A%20%20%20%20result%20%3D%20%22%22%0A%20%20%20%20for%20letter%20in%20word%3A%0A%20%20%20%20%20%20%20%20result%20%3D%20letter%20%2B%20result%0A%20%20%20%20return%20result%0A%20%20%20%20%0Aprint%28reverse_word%28%22bananas%22%29%29%0Aprint%28reverse_word%28%22blueberry%22%29%29%0Aprint%28reverse_word%28%22a%22%29%29%0Aprint%28reverse_word%28%22%22%29%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false) prints:
+
+```
+sananab
+yrrebeulb
+a
+
+```
 **********************************************
 ## Reverse the Words: Reverse All The Words
 
@@ -105,9 +188,9 @@ def reverse_all_words(phrase):
 ```
 
 ---
-Given that we have a function to help us reverse a single word, now let's write
-a function to take phrase, and reverse all its words. This function:
-`reverse_all_words` does that.
+Now, given that we have a function to help us reverse a single word.
+Let's write a function to take phrase, and reverse all its words.
+This function: `reverse_all_words` does that.
 
 It takes a single `phrase` string parameter, and outputs a version of the phrase
 with its words reversed.
