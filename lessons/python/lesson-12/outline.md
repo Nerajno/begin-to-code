@@ -1,9 +1,7 @@
-# Lesson 12 Outline
+## Refactorings
 
-* bucket accumulator pattern
-
-* keys()
-* values()
-* items()
-* for in
-* get(key, default_value)
+1. Variable renaming
+2. Extract variable
+3. Inline Temp
+4. Extract function
+5. Inline function
