@@ -13,7 +13,7 @@ Write a program to:
 
 ### Do Another
 
-Take a program you wrote for a previous assignment. Make it run
+Take a program you wrote from the previous lesson. Make it run
 repeatedly.
 
 After each run of the program, ask the user if they want to run it again.

@@ -143,8 +143,9 @@ $(function() {
   }
 
   function postprocess(html) {
-    html = html.replace(/\[\[((?:[^\[]|[\n])(?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '<span title="$2" class="tooltip">$1</span>');
+    html = html.replace(/([^\[])\[\[((?:[^\[]|[\n])(?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '$1<span title="$3" class="tooltip">$2</span>');
     html = html.replace(/\[\[\[((?:.|[\n])*?)\]\]\]/g, '<span class="highlight">$1</span>');
+    html = html.replace(/---/g, "&#8212;");
     return html;
   }
 

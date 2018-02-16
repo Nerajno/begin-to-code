@@ -2,6 +2,7 @@
   { "title": "Lesson 1 - Printing and Prompting", "path": "lesson-1" },
   { "title": "Lesson 2 - If Statement", "path": "lesson-2" },
   { "title": "Lesson 2.1 - While Loop", "path": "lesson-2.1" },
+  { "title": "Lesson 2.2 - String Formatting", "path": "lesson-2.2" },
   { "title": "Lesson 2.5 - The Accumulator Pattern", "path": "lesson-2.5" },
   { "title": "Lesson 3.1 - String Manipulation", "path": "lesson-3.1" },
   { "title": "Lesson 4.1 - String Manipulation 2", "path": "lesson-4.1" },
