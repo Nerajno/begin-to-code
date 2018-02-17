@@ -4,6 +4,12 @@ var lessons = [];
 var slides = [];
 
 $(function() {
+  $('body').on('click', 'a', function(e) {
+    e.preventDefault();
+    var url = e.target.href;
+    window.open(url);
+  });
+
   initialize();
 
   function initialize() {
@@ -125,14 +131,6 @@ $(function() {
     md = preprocess(md);
     var html = markdownit({
       html: true
-      // highlight: function (str, lang) {
-      //   if (lang && hljs.getLanguage(lang)) {
-      //     try {
-      //       return hljs.highlight(lang, str).value;
-      //     } catch (__) {}
-      //   }
-      //   return ''; // use external default escaping
-      // }
     }).render(md);
     html = postprocess(html);
     return html;
@@ -144,7 +142,7 @@ $(function() {
 
   function postprocess(html) {
     html = html.replace(/([^\[])\[\[((?:[^\[]|[\n])(?:.|[\n])*?)\]\]\[\[(.*?)\]\]/g, '$1<span title="$3" class="tooltip">$2</span>');
-    html = html.replace(/\[\[\[((?:.|[\n])*?)\]\]\]/g, '<span class="highlight">$1</span>');
+    html = html.replace(/\[\[\[((?:.|[\n])*?)\]\]\]([^\]]|$)/g, '<span class="highlight">$1</span>$2');
     html = html.replace(/---/g, "&#8212;");
     return html;
   }

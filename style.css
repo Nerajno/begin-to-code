@@ -106,10 +106,21 @@ body {
 
 code {
   font-family: "Monaco", "monospace";
+  background-color: #ddd;
 }
 
-.tooltip, .tooltip * {
-  outline: 2px solid yellow;
+.highlight, .tooltip, .tooltip *{
+  background-color: orange;
+  color: black;
+}
+
+code .highlight, code .tooltip, code .tooltip * {
+  background-color: yellow;
+  color: black;
+}
+
+.highlight code, .tooltip code, .tooltip code *{
+  background-color: inherit;
 }
 
 #view pre {
@@ -119,11 +130,10 @@ code {
   min-width: 24em;
 }
 
-#toolbar {
-  position: absolute;
+#view pre code {
+  background-color: inherit;
 }
 
-.highlight {
-  background-color: yellow;
-  color: black;
+#toolbar {
+  position: absolute;
 }
