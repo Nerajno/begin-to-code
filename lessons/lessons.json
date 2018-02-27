@@ -1,0 +1,17 @@
+[
+  { "title": "Python 1 - Printing and Prompting", "path": "python/lesson-1" },
+  { "title": "Python 2 - If Statement", "path": "python/lesson-2" },
+  { "title": "Python 2.1 - While Loop", "path": "python/lesson-2.1" },
+  { "title": "Python 2.2 - String Formatting", "path": "python/lesson-2.2" },
+  { "title": "Python 2.5 - The Accumulator Pattern", "path": "python/lesson-2.5" },
+  { "title": "Python 3.1 - String Manipulation", "path": "python/lesson-3.1" },
+  { "title": "Python 4.1 - String Manipulation 2", "path": "python/lesson-4.1" },
+  { "title": "Python 5 - String Manipulation 3", "path": "python/lesson-5" },
+  { "title": "Python 9 - Functions - Part 1", "path": "python/lesson-9" },
+  { "title": "Python 9.5 - Functions - Part 2", "path": "python/lesson-9.5" },
+  { "title": "Python 10 - Records", "path": "python/lesson-10" },
+  { "title": "Python 11 - Dictionaries", "path": "python/lesson-11" },
+  { "title": "Python 12 - Dictionaries 2", "path": "python/lesson-12" },
+  { "title": "Python 13 - Refactoring", "path": "python/lesson-13" },
+  { "title": "JS 1 - JavaScript Basics (Accelerated)", "path": "javascript/lesson-1" }
+]

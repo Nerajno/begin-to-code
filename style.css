@@ -88,6 +88,22 @@ body {
   border-collapse: collapse;
 }
 
+#slide-contents table.comparison td {
+  width: 50%;
+}
+
+#slide-contents table.comparison pre {
+  min-width: inherit;
+}
+
+#slide-contents table.comparison td {
+  vertical-align: top;
+}
+
+#slide-contents table.comparison pre code {
+  font-size: inherit;
+}
+
 #slide-contents table td,
 #slide-contents table th {
   border: 1px solid grey;

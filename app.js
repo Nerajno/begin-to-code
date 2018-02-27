@@ -13,7 +13,7 @@ $(function() {
   initialize();
 
   function initialize() {
-    $.get('lessons/python/lessons.json')
+    $.get('lessons/lessons.json')
       .then(function(data) {
         lessons = data;
         lessonIndex = 1;
@@ -23,13 +23,17 @@ $(function() {
 
   function restoreHashLocation() {
     if (location.hash) {
-      var path = location.hash.slice(1).split('/');
-      if (path.length === 1) {
-        lessonIndex = _.findIndex(lessons, function(l) { return l.path === path[0] });
+      var match = location.hash.match(/^\#([\w\-0-9]+)\/([\w\-0-9\.]+)(?:\/([0-9]+))?/);
+      var course = match[1];
+      var lesson = match[2];
+      var slideNo = match[3];
+      var targetPath = course + "/" + lesson;
+      if (!slideNo) {
+        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath });
         startLesson();
-      } else if (path.length === 2) {
-        lessonIndex = _.findIndex(lessons, function(l) { return l.path === path[0] });
-        pageIndex = Number(path[1]);
+      } else if (slideNo) {
+        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath });
+        pageIndex = Number(slideNo);
         // console.log('lessonIndex', lessonIndex, 'pageIndex', pageIndex);
         startLesson();
       } else {
@@ -72,8 +76,10 @@ $(function() {
   }
 
   function startLesson() {
+    console.log("lessons", lessons);
+    console.log("lessonIndex", lessonIndex);
     var lesson = lessons[lessonIndex];
-    $.get('lessons/python/' + lesson.path + '/presentation.md')
+    $.get('lessons/' + lesson.path + '/presentation.md')
       .then(function(md) {
         var html = markdownRender(md);
         slides = splitSlides(html);
@@ -116,11 +122,11 @@ $(function() {
     $('#slide-contents')
       .html(page.slide)
       .find('.tooltip')
-        .tooltipster({
-          delay: 0,
-          animationDuration: 0
-        })
-        .tooltipster('open');
+      .tooltipster({
+        delay: 0,
+        animationDuration: 0
+      })
+      .tooltipster('open');
     $('#speaker-notes')
       .html(page.speakerNotes);
     $('#page-number').text(pageIndex + 1);
