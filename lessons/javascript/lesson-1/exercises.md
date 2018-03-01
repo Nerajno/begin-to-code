@@ -94,3 +94,8 @@ the original Caesar Cipher: ROT13 --- using 13 as the key.
 
 What is the Caesar Cipher? Read about it:
 http://practicalcryptography.com/ciphers/caesar-cipher/
+
+## Bonus
+
+* Do some code challenges on Code Wars or similar --- you may pick ones you've
+done before --- and solve them in JavaScript.
