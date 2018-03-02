@@ -769,3 +769,7 @@ you've learned previously to iterate through the values of a list. The
 Loop-And-Filter pattern to perform operations only on selected items of a list.
 And finally the accumulator pattern to accumulate a list of values into a single
 value.
+******************************************
+## Homework
+
+[Enjoy your homework](https://gist.github.com/airportyh/3fdc72f884400a8b6e1fee7558b82e4c)

@@ -1,29 +1,95 @@
 # More Exercises for Lesson 2.5
 
-## Scores
 
-The judges gave these scores:
+## Prices
 
 ```python
-scores = [7, 8, 9, 10, 5, 6, 7, 3, 4]
+prices = [12.50, 23.99, 50.00, 23.45, 45.95, 72.50, 100.00]
 ```
 
-Write programs to:
+You have a list of the prices of some items. Loop through them and print
+them out one by one, with a `$` sign in front of each, like:
 
-1. Print each score. (loop counter pattern)
-2. Print each score doubled. (loop counter pattern)
-3. Print all the scores in this list that are greater than 5. (loop and filter)
-4. Print all the scores in this list that are odd. (loop and filter)
-5. Print the total of the scores in this list. (accumulator pattern)
-6. Print the total of all the scores that are greater than 5. (accumulator + filter pattern)
-7. Print the total of all the scores that are odd. (accumulator + filter pattern)
-8. Print the count of the number of scores in the list that are greater than 5. (accumulator + filter pattern)
-9. Print the count of the number of scores in the list that are odd. (accumulator + filter pattern)
+```
+$12.50
+$23.99
+$50.00
+$23.45
+$45.95
+$72.50
+$100.00
+```
 
-## Bonus Challenges
+## Discounts
 
-1. Print the average score.
-2. Print the largest score. (Hint: accumulator pattern with an if statement)
-3. Print the smallest score.
-4. Print the total score minus the largest and the smallest score.
-5. Print the average score minus the largest and smallest score.
+Based on the prices problem: everything has been discounted 50% off.
+Go through each price and print each reduced price.
+
+## Hello Folks with Ages
+
+You have a list of names and a matching list of ages:
+
+```python
+names = ['Manoush', 'Ram', 'Joshua', 'Marion']
+ages = [42, 30, 27, 52]
+```
+
+Each age in the ages list matches the name in the corresponding index
+in the names list.
+
+Go through and say each person's age. Output should look like:
+
+```
+Manoush is 42.
+Ram is 30.
+Joshua is 27.
+Marion is 52.
+```
+
+## Odd Positioned Numbers
+
+Like the numbers problem, but only print the numbers that are at the odd
+positions in the list.
+
+## Odd Numbers
+
+Like the numbers problem, but only print the odd numbers.
+
+## Expensive Items
+
+Like the prices problem, but only print prices that are $50 or greater.
+
+## Expensive after discount
+
+Like the prices problem, but only print prices that are $50 or greater after the
+discount.
+
+## Total Price
+
+Total all of the prices.
+
+## Total Savings
+
+Total the amount that would have been saved if someone bought each product
+given the 50% discount.
+
+## Total Under Fifty
+
+Total the amount it would have cost someone if they bought everything under
+$50 after the discount.
+
+## Total with Quantities
+
+Given the list of prices, same as in the prices problem, plus a matching
+list of quantities:
+
+```python
+prices = [12.50, 23.99, 50.00, 23.45, 45.95, 72.50, 100.00]
+quantities = [1, 5, 10, 7, 20, 4, 10]
+```
+
+Each quantity in the quantities list matches the price in the same index
+in the prices list.
+
+Now give the grand total if someone were to purchases all of these items at
+these quantities.
