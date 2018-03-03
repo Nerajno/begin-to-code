@@ -13,5 +13,6 @@
   { "title": "Python 11 - Dictionaries", "path": "python/lesson-11" },
   { "title": "Python 12 - Dictionaries 2", "path": "python/lesson-12" },
   { "title": "Python 13 - Refactoring", "path": "python/lesson-13" },
-  { "title": "JS 1 - JavaScript Basics (Accelerated)", "path": "javascript/lesson-1" }
+  { "title": "JS 1 - JavaScript Basics (Accelerated)", "path": "javascript/lesson-1" },
+  { "title": "JS 2 - JavaScript Intermediate (Accelerated)", "path": "javascript/lesson-2" }
 ]
