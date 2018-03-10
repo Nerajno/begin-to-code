@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Home Page</title>
+  </head>
+  <body>
+    <h1 id="header">My Home Page</h1>
+    <button id="uppercase">Uppercase</button>
+    <button id="multiply">Multiply</button>
+  </body>
+  <script src="jquery.js"></script>
+  <script>
+  $("#uppercase").on("click", function() {
+    var existingText = $("#header").text();
+    $("#header").text(existingText.toUpperCase());
+  });
+
+  $("#multiply").on("click", function() {
+    var existingText = $("#header").text();
+    $("#header").text(existingText + existingText);
+  });
+  </script>
+</html>

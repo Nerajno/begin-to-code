@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game</title>
+  </head>
+  <body>
+    <div>
+      <label>You:</label>
+      <span id="player"></span>
+    </div>
+    <div>
+      <label>Computer:</label>
+      <span id="computer"></span>
+    </div>
+    <p id="you-win">YOU WIN!!!</p>
+
+    <button id="play-rock">Rock</button>
+    <button id="play-paper">Paper</button>
+    <button id="play-scissors">Scissors</button>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    $("#you-win").hide();
+
+    $("#play-rock").click(function() {
+        $("#player").text("Rock");
+        $("#computer").text("Scissors");
+        $("#you-win").show();
+    });
+
+    $("#play-paper").click(function() {
+        $("#player").text("Paper");
+        $("#computer").text("Rock");
+        $("#you-win").show();
+    });
+
+    $("#play-scissors").click(function() {
+        $("#player").text("Scissors");
+        $("#computer").text("Paper");
+        $("#you-win").show();
+    });
+
+    $("#click-me").click(function() {
+        $("#paragraph-2").show();
+    });
+
+    </script>
+  </body>
+</html>

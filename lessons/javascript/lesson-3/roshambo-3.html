@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game</title>
+  </head>
+  <body>
+    <h1>Rock, Paper, and Scissors</h1>
+    <h2>Computer:</h2>
+    <span id="computer"></span>
+
+    <h2>You:</h2>
+    <span id="player"></span>
+
+    <h2 id="game-result"></h2>
+
+    <h3>Your Move:</h3>
+
+    <button id="play-rock">Rock</button>
+    <button id="play-paper">Paper</button>
+    <button id="play-scissors">Scissors</button>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    function playComputer() {
+      var choices = ["Rock", "Paper", "Scissors"];
+      var choice = choices[Math.floor(Math.random() * 3)];
+      $("#computer").text(choice);
+    }
+
+    function determineWinner() {
+      var player = $("#player").text();
+      var computer = $("#computer").text();
+      if (player === computer) {
+        $("#game-result").text("It's a tie!");
+      }
+      if ((player === "Rock" && computer === "Scissors") ||
+          (player === "Scissors" && computer === "Paper") ||
+          (player === "Paper" && computer === "Rock")) {
+        $("#game-result").text("YOU WIN!!!");
+      } else {
+        $("#game-result").text("YOU LOSE!!!");
+      }
+    }
+
+    $("#play-rock").on("click", function() {
+      $("#player").text("Rock");
+      playComputer();
+      determineWinner();
+    });
+
+    $("#play-paper").on("click", function() {
+      $("#player").text("Paper");
+      playComputer();
+      determineWinner();
+    });
+
+    $("#play-scissors").on("click", function() {
+      $("#player").text("Scissors");
+      playComputer();
+      determineWinner();
+    });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Playing Cards</title>
+    <style>
+    body {
+      background-color: green;
+      text-align: center;
+    }
+    h1 {
+      color: #fff;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Flip a Card</h1>
+
+    <img id="queen-of-diamonds" src="images/cards/card-back.png" width="200" alt="Card Back">
+    <!-- <img id="ace-of-spades" src="playing-cards/card-back.png" width="200" alt="Card Back">
+    <img id="king-of-clubs" src="playing-cards/card-back.png" width="200" alt="Card Back"> -->
+
+    <script src="jquery.js"></script>
+    <script>
+    $("#queen-of-diamonds").click(function() {
+      $("#queen-of-diamonds").attr("src", "playing-cards/queen_of_diamonds.png");
+    });
+
+    $("#ace-of-spades").click(function() {
+      $("#ace-of-spades").attr("src", "playing-cards/ace_of_spades.png");
+    });
+
+    $("#king-of-clubs").click(function() {
+      $("#king-of-clubs").attr("src", "playing-cards/king_of_clubs.png");
+    });
+    </script>
+  </body>
+</html>

@@ -29,10 +29,10 @@ $(function() {
       var slideNo = match[3];
       var targetPath = course + "/" + lesson;
       if (!slideNo) {
-        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath });
+        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath; });
         startLesson();
       } else if (slideNo) {
-        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath });
+        lessonIndex = _.findIndex(lessons, function(l) { return l.path === targetPath; });
         pageIndex = Number(slideNo);
         // console.log('lessonIndex', lessonIndex, 'pageIndex', pageIndex);
         startLesson();
@@ -76,8 +76,8 @@ $(function() {
   }
 
   function startLesson() {
-    console.log("lessons", lessons);
-    console.log("lessonIndex", lessonIndex);
+    // console.log("lessons", lessons);
+    // console.log("lessonIndex", lessonIndex);
     var lesson = lessons[lessonIndex];
     $.get('lessons/' + lesson.path + '/presentation.md')
       .then(function(md) {
@@ -128,7 +128,7 @@ $(function() {
       })
       .tooltipster('open');
     $('#speaker-notes')
-      .html(page.speakerNotes);
+      .html(page.speakerNotes || "");
     $('#page-number').text(pageIndex + 1);
     $('#total-page-number').text(slides.length);
   }
