@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+  </head>
+  <body>
+
+    <ul id="things">
+      <li>apple</li>
+      <li>banana</li>
+      <li>orange</li>
+    </ul>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    $("#things li").on("click", function() {
+      var text = $(this).text();
+      var newLi = $("<li>" + text + "</li>");
+      $("#things").append(newLi);
+    });
+
+    </script>
+  </body>
+</html>

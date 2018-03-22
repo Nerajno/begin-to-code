@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+  </head>
+  <body>
+
+    <img id="image" width="500" src="images/IMG_3878.JPG">
+    <br>
+
+    <button id="prev-button">Previous</button>
+    <button id="next-button">Next</button>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    var imageUrls = [
+      "images/IMG_3878.JPG",
+      "images/IMG_3886.JPG",
+      "images/IMG_3891.JPG",
+      "images/IMG_3893.JPG",
+      "images/IMG_3903.JPG"
+    ];
+
+    var imageIndex = 0;
+
+    $("#prev-button").on("click", function() {
+      imageIndex--;
+      if (imageIndex < 0) {
+        imageIndex += imageUrls.length;
+      }
+      $("#image").attr("src", imageUrls[imageIndex]);
+    });
+
+    $("#next-button").on("click", function() {
+      imageIndex++;
+      if (imageIndex >= imageUrls.length) {
+        imageIndex = 0;
+      }
+      $("#image").attr("src", imageUrls[imageIndex]);
+    });
+
+    </script>
+  </body>
+</html>

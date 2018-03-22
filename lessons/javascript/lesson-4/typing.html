@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <style>
+    .space {
+      width: 200px;
+      height: 20px;
+
+    }
+    </style>
+  </head>
+  <body>
+
+    <p id="display"></p>
+    <button class="letter">q</button>
+    <button class="letter">w</button>
+    <button class="letter">e</button>
+    <button class="letter">r</button>
+    <button class="letter">t</button>
+    <button class="letter">y</button>
+    <button class="letter">u</button>
+    <button class="letter">i</button>
+    <button class="letter">o</button>
+    <button class="letter">p</button>
+    <br>
+    <button class="caps-lock">Caps Lock</button>
+    <button class="letter">a</button>
+    <button class="letter">s</button>
+    <button class="letter">d</button>
+    <button class="letter">f</button>
+    <button class="letter">g</button>
+    <button class="letter">h</button>
+    <button class="letter">j</button>
+    <button class="letter">k</button>
+    <button class="letter">l</button>
+    <br>
+    <button class="letter">z</button>
+    <button class="letter">x</button>
+    <button class="letter">c</button>
+    <button class="letter">v</button>
+    <button class="letter">b</button>
+    <button class="letter">n</button>
+    <button class="letter">m</button>
+
+    <br>
+    <button class="space letter"> </button>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    var state = "caps-lock-off";
+
+    $(".letter").on("click", function() {
+      var letter = $(this).text();
+      if (state === "caps-lock-on") {
+        letter = letter.toUpperCase();
+      }
+      $("#display").text($("#display").text() + letter);
+    });
+
+    $(".caps-lock").on("click", function() {
+      if (state === "caps-lock-off") {
+        state = "caps-lock-on";
+      } else {
+        state = "caps-lock-off";
+      }
+    });
+
+    </script>
+  </body>
+</html>

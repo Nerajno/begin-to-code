@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+  </head>
+  <body>
+    
+    <p id="words"></p>
+    <button class="word">I</button>
+    <button class="word">like</button>
+    <button class="word">to</button>
+    <button class="word">eat</button>
+    <button class="word">apples</button>
+    <button class="word">and</button>
+    <button class="word">bananas</button>
+
+    <script src="jquery.js"></script>
+    <script>
+    $(".word").on("click", function() {
+      var word = $(this).text();
+      $("#words").text($("#words").text() + " " + word);
+    });
+    </script>
+  </body>
+</html>

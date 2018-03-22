@@ -2,9 +2,14 @@
 
 ## Section 1: Bucket Accumulator Pattern
 
+0. Write a function `number_tally(numbers)` that takes a list of numbers,
+and counts how many times each number has appeared in the list. The
+return value should be a dictionary, where the key of each entry is a number
+in the list, and the value of each entry is a number representing the
+number of times that word appeared.
 1. Write a function `word_tally(phrase)` that takes a phrase as a string, and
 counts how many times each word in the phrase has appeared. The return value
-should be a dictionary, where the key of each entry is a word is the phrase,
+should be a dictionary, where the key of each entry is a word in the phrase,
 and the value of each entry is a number representing the number of times
 that word appeared.
 2. Write a function `shelf_books(books)` that takes a list of strings ---
@@ -63,11 +68,13 @@ You have all the members of the USA 1994 Olympics team, a.k.a The Dream Team,
 arranged as a list of records. Write a function to answer each of the following:
 (each function should return a dictionary)
 
-1. Group the players by their home teams. The return value of the function
-should have the home team name as the key, and the list of players on
-that home team as the value.
-2. Who is the the highest scorer for each position?
-3. Build a histogram of the number of points the players scored:
+1. What is the total number of points scored for each position?
+  (key: position name, value: total score)
+2. How many players are there for each position?
+  (key: position name, value: # of players)
+3. Group the players by their home teams.
+  (key: home team, value: list of players)
+4. Build a histogram of the number of points the players scored:
     * How many scored between 0 - 10 points?
     * How many scored between 11 - 20 points?
     * 21 - 30 points?
@@ -78,6 +85,7 @@ Return a dictionary where each entry represents a range of 10 points. The
 key of 10 represents the range between 0 - 10, 20 represents the range between
 11 - 20, and so on. The value is a number representing the number of players
 who scored within that range.
+5. Who is the the highest number of points scored for each position?
 
 *Look for continuation of these problems in section 2 below.*
 
@@ -137,7 +145,5 @@ The high scorer at position SG is Michael Jordan.
 The high scorer at position PG is Magic Johnson.
 ```
 
-2. Take your solution \#2 from the basketball, loop through the dictionary
-to print the results.
-3. Take your solution \#3 from the basketball, loop through the dictionary
+2. Take your solution \#2 - \#5 from the basketball, loop through the dictionary
 to print the results.
