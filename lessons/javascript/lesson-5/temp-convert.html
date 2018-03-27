@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Temperature Conversion</title>
+  </head>
+  <body>
+    <input id="celsius" type="text">°C
+    <span id="result"> = <span id="fahrenheit"></span>°F</span>
+    <br>
+    <button id="convert">Convert!</button>
+    <script src="jquery.js"></script>
+    <script>
+    $("#result").hide();
+    $("#convert").on("click", function() {
+      var c = Number($("#celsius").val());
+      $("#fahrenheit").text(c * 9 / 5 + 32);
+      $("#result").show();
+    });
+    </script>
+  </body>
+</html>

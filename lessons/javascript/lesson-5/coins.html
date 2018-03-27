@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coins</title>
+  </head>
+  <body>
+    <div id="coin-container"></div>
+    <button id="quarter" class="coin">Add Quarter</button>
+    <button id="dime" class="coin">Add Dime</button>
+    <button id="nickle" class="coin">Add Nickel</button>
+    <button id="penny" class="coin">Add Penny</button>
+    <script src="jquery.js"></script>
+    <script>
+    $(".coin").on("click", function() {
+      var id = $(this).attr("id");
+      var image = $('<img src="images/' + id + '-front.png">')
+      $("#coin-container").append(image);
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Order a Smoothie</title>
+  </head>
+  <body>
+    <form id="page-1">
+      <h1>Order a Smoothie</h1>
+      <label>What is your name?</label><br>
+      <input name="name" type="text">
+      <br>
+      <label>What flavor?</label><br>
+      <select name="flavor">
+        <option value="strawbery-bananas">Strawberry Bananas</option>
+        <option value="lemonade">Lemonade</option>
+        <option value="orange-mango">Orange Mango</option>
+        <option value="chocolate">Chocolate</option>
+      </select>
+      <br>
+      <label>What size?</label><br>
+      <label><input type="radio" name="size" value="big">Big</label>
+      <label><input type="radio" name="size" value="medium">Medium</label>
+      <label><input type="radio" name="size" value="small">Small</label>
+      <br>
+      <label><input type="checkbox" name="take-out">Take out?</label>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="page-2"></div>
+    <script src="jquery.js"></script>
+    <script>
+    $("#page-2").hide();
+
+    $("#page-1").on("submit", function(event) {
+      event.preventDefault();
+      var name = $("[name='name']").val();
+      var flavor = $("[name='flavor']").val();
+      var size = $("[name='size']:checked").val();
+      var takeout
+      $("#page-1").hide();
+      $("#page-2").text("Okay, " + name + "! One " + size + " "+ flavor + " smoothie coming up!");
+      $("#page-2").show();
+    });
+
+
+    </script>
+  </body>
+</html>

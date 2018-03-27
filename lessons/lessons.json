@@ -15,5 +15,7 @@
   { "title": "Python 13 - Refactoring", "path": "python/lesson-13" },
   { "title": "JS 1 - JavaScript Basics (Accelerated)", "path": "javascript/lesson-1" },
   { "title": "JS 2 - JavaScript Intermediate (Accelerated)", "path": "javascript/lesson-2" },
-  { "title": "JS 3 - jQuery 101", "path": "javascript/lesson-3" }
+  { "title": "JS 3 - jQuery 101", "path": "javascript/lesson-3" },
+  { "title": "JS 4 - jQuery 102", "path": "javascript/lesson-4" },
+  { "title": "JS 5 - jQuery 201", "path": "javascript/lesson-5" }
 ]

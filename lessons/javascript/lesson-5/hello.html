@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body>
+    <label>What's your name?</label>
+    <input id="name-input" type="text" value="Tom">
+    <button id="submit-button">Submit</button>
+    <script src="jquery.js"></script>
+    <script>
+
+    $("#submit-button").on("click", function() {
+      var name = $("#name-input").val();
+      alert("Hello, " + name + "!");
+    });
+
+    </script>
+  </body>
+</html>

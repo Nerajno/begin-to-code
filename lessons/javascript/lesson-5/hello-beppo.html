@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body>
+    <div id="ask-name-page">
+      <label>What's your name?<label>
+      <input id="name-input" type="text" value="Beppo">
+      <button id="submit-button">Submit</button>
+    </div>
+    <div id="greeting-page">
+      Hello, <span id="name-display">Beppo</span>!
+      <button id="again-button">Play Again</button>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+    $("#greeting-page").hide();
+
+    $("#submit-button").on("click", function() {
+      var name = $("#name-input").val();
+      $("#name-display").text(name);
+      $("#ask-name-page").hide();
+      $("#greeting-page").show();
+    });
+
+    </script>
+  </body>
+</html>

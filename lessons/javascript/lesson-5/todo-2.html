@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div id="task-list-page">
+      <h1>Todos</h1>
+      <ul id="task-list">
+        <li>water plants</li>
+        <li>do homework</li>
+      </ul>
+      <button id="add-task-button">Add Task</button>
+    </div>
+    <div id="add-task-page">
+      <h1>Add Task</h1>
+      <input id="new-task-input" type="text">
+      <button id="create-task-button">Create Task</button>
+    </div>
+    <div id="edit-task-page">
+      <h1>Edit Task</h1>
+      <input id="existing-task-input" type="text">
+      <button id="save-existing-task-button">Save Task</button>
+      <button id="delete-button">Delete Task</button>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+    var editingLi;
+    $("#add-task-page, #edit-task-page").hide();
+
+    $("#add-task-button").on("click", function() {
+      $("#task-list-page").hide();
+      $("#add-task-page").show();
+    });
+
+    $("#create-task-button").on("click", function() {
+      var taskName = $("#new-task-input").val();
+      var newLi = $("<li>" + taskName + "</li>");
+      $("#task-list").append(newLi);
+      $("#task-list-page").show();
+      $("#add-task-page").hide();
+    });
+
+    $("#task-list").on("dblclick", "li", function() {
+      editingLi = this;
+      var taskName = $(this).text();
+      $("#existing-task-input").val(taskName);
+      $("#task-list-page").hide();
+      $("#edit-task-page").show();
+    });
+
+    $("#save-existing-task-button").on("click", function() {
+      var newTaskName = $("#existing-task-input").val();
+      $(editingLi).text(newTaskName);
+      $("#task-list-page").show();
+      $("#edit-task-page").hide();
+    });
+
+    $("#delete-button").on("click", function() {
+      $(editingLi).remove();
+      $("#task-list-page").show();
+      $("#edit-task-page").hide();
+    });
+    </script>
+  </body>
+</html>

@@ -5,17 +5,16 @@
     <title>Todo List</title>
   </head>
   <body>
-    <input id="add-new-task-input" type="text">
     <button id="add-new-task-button">Add Task</button>
     <ul id="task-list">
-      <li>water plants</li>
-      <li>do homework</li>
+      <li><input type="checkbox">water plants</li>
+      <li><input type="checkbox">do homework</li>
     </ul>
     <script src="jquery.js"></script>
     <script>
     $("#add-new-task-button").on("click", function() {
-      var description = $("#add-new-task-input").val();
-      var newLi = $("<li>" + description + '</li>');
+      var description = prompt("What do you have to do?");
+      var newLi = $('<li><input type="checkbox">' + description + '</li>');
       $("#task-list").append(newLi);
     });
     </script>

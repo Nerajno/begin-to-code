@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coins</title>
+  </head>
+  <body>
+
+    <label>Charge Amount</label><br>
+    <input id="charge-field" type="text">
+
+    <label>Cash Amount</label><br>
+    <input id="cash-field" type="text">
+
+    <button id="change-button">Get Change</button>
+
+    <div id="coin-container"></div>
+    <script src="jquery.js"></script>
+    <script>
+    $("#change-button").on("click", function(event) {
+      event.preventDefault();
+      var charge = Number($("#charge-field").val());
+      var cash = Number($("#cash-field").val());
+      var diff = cash - charge;
+      var coinTypes = [
+        { name: "quarter", amount: 0.25 },
+        { name: "dime", amount: 0.10 },
+        { name: "nickle", amount: 0.05 },
+        { name: "penny", amount: 0.01 }
+      ];
+      var idx = 0;
+      while (diff > 0 && idx < coinTypes.length) {
+        var coinType = coinTypes[idx];
+        if (coinType.amount < diff) {
+          var image = $('<img src="images/' + coinType.name + '-front.png">')
+          $("#coin-container").append(image);
+          diff -= coinType.amount;
+        } else {
+          idx++;
+        }
+      }
+    });
+    $(".coin").on("click", function() {
+      var id = $(this).attr("id");
+      var image = $('<img src="images/' + id + '-front.png">')
+      $("#coin-container").append(image);
+    });
+    </script>
+  </body>
+</html>
