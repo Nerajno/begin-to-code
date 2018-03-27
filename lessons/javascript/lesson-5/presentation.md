@@ -2,8 +2,8 @@
 
 ---
 Welcome back! In this lesson you'll learn how to use
-jQuery to work with text inputs, generate new elements,
-show and hide elements and work with form elements.
+jQuery to work with text inputs, show and hide elements,
+generate new elements, and event delegation.
 ***********************************************************
 # Section 1
 ## Text Inputs, Hide and Show
@@ -34,7 +34,7 @@ This is a text input element. It has an id of "name-input", so
 that we can use an ID selector to grab it in jQuery. It also
 has a type attribute with the value of "text", which tells
 the browser that this is a type input, and not a
-checkbox or radio button.)
+checkbox or radio button.
 ***********************************************************
 ## Text Inputs: Initial Value
 
@@ -54,14 +54,8 @@ be changed by the user.
 ***********************************************************
 ## Text Inputs: Get Current Value
 
-```html
-<label>What's your name?<label>
-<input id="name-input" type="text" value="Beppo">
-<button id="submit-button">Submit</button>
-```
-
 ```js
-$("#name-input").val();
+$("#name-input").val()
 ```
 
 ---
@@ -69,18 +63,22 @@ We can get the current value of the text input using this line of jQuery,
 ***********************************************************
 ## Text Inputs: Get Current Value
 
-```html
-<label>What's your name?<label>
-<input id="name-input" type="text" value="Beppo">
-<button id="submit-button">Submit</button>
-```
-
 ```js
-[[$("#name-input")]][[Get text input by ID]].val();
+[[$("#name-input")]][[Get text input by ID]].val()
 ```
 
 ---
 which first gets the text input by its ID: "name-input", then...
+***********************************************************
+## Text Inputs: Get Current Value
+
+```js
+$("#name-input")[[.val()]][[Get value of text input]]
+```
+
+---
+calls the `val` method --- which is short for value --- to get its
+current value.
 ***********************************************************
 ## Text Inputs: Get Current Value
 
@@ -90,16 +88,12 @@ which first gets the text input by its ID: "name-input", then...
 <button id="submit-button">Submit</button>
 ```
 
-```js
-$("#name-input")[[.val()]][[Get value of text input]];
-```
-
 ---
-calls the `val` method --- which is short for value --- to get its
-current value.
 
 Now, we'd like to say a greeting to the user using
 the `alert` function when the submit button is clicked.
+You can grab the name of the user from the value of the
+ `#name-input` element.
 
 Give this a try! When you are done, turn to the next slide
 for the solution.
@@ -157,8 +151,8 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-Whenever the submit button is clicked, we first get the current value
-of the text input.
+When the submit button is clicked, we first get the current value
+of the text input and save it into the `name` variable.
 ***********************************************************
 ## Solution
 
@@ -176,7 +170,8 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-Then compose a greeting and use the alert function to show it to the user.
+Then we compose a greeting and use the alert function to show it to the
+user.
 ***********************************************************
 ## Solution
 
@@ -194,8 +189,9 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-So this little hello program works. However, in general, using the `alert`
-function to popup a message in a web page is often considered bad form.
+This hello program works. However, in general, using the `alert`
+function to popup a message in a web page is often considered bad form
+because
 
 1. It forces the user to click on something in order to continue, and
 2. The popup dialog cannot be styled.
@@ -349,7 +345,7 @@ page* initially, so that the *Ask Name Page* is the only page that is seen.
 <div id="ask-name-page">
   <label>What's your name?<label>
   <input id="name-input" type="text" value="Beppo">
-  [[<button id="submit-button">Submit</button>]][[button to listen for clicks]]
+  <button id="submit-button">Submit</button>
 </div>
 <div id="greeting-page">
   Hello, <span id="name-display">Beppo</span>!
@@ -367,8 +363,33 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-Let's put back the event handler code from version 1 to listen
-for clicks on the submit button.
+Let's put back the event handler code from version 1.
+***********************************************************
+## Hello Beppo: Version 2
+
+```html
+<div id="ask-name-page">
+  <label>What's your name?<label>
+  <input id="name-input" type="text" value="Beppo">
+  [[<button id="submit-button">Submit</button>]][[Button to listen for clicks on]]
+</div>
+<div id="greeting-page">
+  Hello, <span id="name-display">Beppo</span>!
+  <button id="again-button">Play Again</button>
+</div>
+```
+
+```js
+$("#greeting-page").hide();
+
+$("#submit-button").on("click", function() {
+  var name = $("#name-input").val();
+  alert("Hello, " + name + "!");
+});
+```
+
+---
+This code listens for clicks on the `#submit-button` element.
 ***********************************************************
 ## Hello Beppo: Version 2
 
@@ -394,9 +415,9 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-But, instead of calling the `alert` function to generate an alert popup,
+Now, instead of calling the `alert` function to generate an alert popup,
 ***********************************************************
-## Hello Beppo: Version 2
+### Hello Beppo: Version 2
 
 ```html
 <div id="ask-name-page">
@@ -422,7 +443,7 @@ $("#submit-button").on("click", function() {
 ---
 we update the text within the `#name-display` element.
 ***********************************************************
-## Hello Beppo: Version 2
+### Hello Beppo: Version 2
 
 ```html
 <div id="ask-name-page">
@@ -448,8 +469,10 @@ $("#submit-button").on("click", function() {
 ```
 
 ---
-Now, let's flip the page by hiding the *ask name page* and showing the
-*greeting page*.
+Now, let's simulate flipping the page by:
+
+1. hiding the *ask name page*, and then
+2. showing the *greeting page*.
 ***********************************************************
 ## Challenge
 
@@ -498,7 +521,7 @@ again button by its ID, then show the *ask name page* and hide the
 *greeting page* whenever a click occurs.
 
 This is the end of section 1. You may choose to work on the
-homework for section 1 before continuing.
+[homework for section 1](https://gist.github.com/airportyh/3e2a30649431e88e601c97035f9ade07) before continuing.
 ***********************************************************
 # Section 2
 ## Generating Elements and Event Delegation
@@ -831,7 +854,7 @@ $("#add-fruit-button").on("click", function() {
 ```
 
 ---
-Let's make it so that you can remove an element from the list
+Next, let's make it so that you can remove an element from the list
 by double-clicking on it --- for which we use the `dblclick`
 event.
 ***********************************************************
@@ -872,8 +895,7 @@ $("#fruits li").on("dblclick", function() {
 ```
 
 ---
-This code removes a fruit from the list when double
-clicked.
+This code removes a fruit from the list when it is double-clicked.
 ***********************************************************
 ## Removing Elements
 
@@ -894,17 +916,19 @@ $("#add-fruit-button").on("click", function() {
   $("#fruits").append(newLi);
 });
 
-$([["#fruits li"]][[get all
-`li`'s within `#fruits`]]).on("dblclick", function() {
+$([["#fruits li"]][[get all li's within #fruits]]).on("dblclick", function() {
   $(this).remove();
 });
 ```
 
 ---
 First we use the `#fruits li` CSS selector to get all
-`li` elements within the `#fruits` element. This is called
-a descendant selector --- where `A B` gives all descendants
-of elements that match `A` which match `B`.
+`li` elements within the `#fruits` element.
+
+This is called a descendant selector --- where if you have `A B`,
+and both `A` and `B` are CSS selectors, it gives you all the descendant
+elements of a parent element that matches `A` where each descendant
+element matches the `B` selector.
 ***********************************************************
 ## Removing Elements
 
@@ -932,9 +956,10 @@ $("#fruits li").on([["dblclick"]][[double click]], function() {
 
 ---
 We register an event handler for any double click events
-on any of these `li` elements.
+on any of these `li` elements. The event name for double-clicks is
+`dblclick`.
 ***********************************************************
-## Removing Elements
+### Removing Elements
 
 ```html
 <ul id="fruits">
@@ -959,8 +984,8 @@ $("#fruits li").on("dblclick", function() {
 ```
 
 ---
-And and when the click happens, we can get hold of the `li`
-that was clicked by the `this` variable.
+When the click happens, we can get hold of the `li`
+that was clicked by using the `this` variable.
 ***********************************************************
 ## Removing Elements
 
@@ -989,7 +1014,7 @@ $("#fruits li").on("dblclick", function() {
 ---
 We rewrap it to gain access to jQuery methods, and
 ***********************************************************
-## Removing Elements
+### Removing Elements
 
 ```html
 <ul id="fruits">
@@ -1015,11 +1040,37 @@ $("#fruits li").on("dblclick", function() {
 
 ---
 then call the `remove` method to remove it from the DOM.
+***********************************************************
+### Removing Elements
 
-So, that works. But...
+```html
+<ul id="fruits">
+  <li>apple</li>
+  <li>banana</li>
+  <li>orange</li>
+</ul>
+<input id="new-fruit-input" type="text">
+<button id="add-fruit-button">Add fruit</button>
+```
 
-It doesn't work for newly added elements. The reason is
-as follows...
+```js
+$("#add-fruit-button").on("click", function() {
+  var newFruit = $("#new-fruit-input").val();
+  var newLi = $("<li>" + newFruit + "</li>");
+  $("#fruits").append(newLi);
+});
+
+$("#fruits li").on("dblclick", function() {
+  $(this).remove();
+});
+```
+
+---
+
+Voila! Done! But...
+
+It doesn't work for newly added elements. To solve this problem,
+we'll need to talk about event delegation.
 ***********************************************************
 ## Event Delegation
 
@@ -1031,7 +1082,6 @@ $("#fruits li").on("dblclick", function() {
 
 ---
 When we register to listen to the events on a set of elements,
-
 ***********************************************************
 ## Event Delegation
 
@@ -1117,7 +1167,8 @@ within a list, then you are clicking on the list itself as well.
 
 ---
 This means that instead of setting up a listener on every single child
-element like this (those are headphones, you might have to use your imagination),
+element like this,
+(those are headphones, you might have to use your imagination)
 ***********************************************************
 ## Event Delegation
 
@@ -1179,14 +1230,28 @@ $("#fruits").on("dblclick", [["li"]][[new argument: CSS selector for matching]],
 
 ---
 Also, in the version, we have added an extra argument after the event name.
-This argument is also a CSS selector, and it is applied to the source
-element of each event. This CSS selector is used to match the element that is
-clicked. In this case, if the clicked element is a `li`, it will trigger
-the event handler function, if it does not, it will not.
+This argument is also a CSS selector, and it is used to match the element
+that is clicked --- the source element of the event.
+
+In this case, if the clicked element is a `li`, it will trigger
+the event handler function. If, however, there is an `a` element
+within `#fruits` that is clicked, that will not trigger this event handler
+function.
+***********************************************************
+## With event delegation
+
+```js
+$("#fruits").on("dblclick", "li", function() {
+  $(this).remove();
+});
+```
+
+---
 
 Functionally, this version works the same as the previous non-event-delegated
 version, but we are now listening for events on the parent `#fruits` element
-instead directly on the `li`s.
+instead directly on the `li`s, and we don't have to worry about adding
+event handlers to newly created `li`s.
 ***********************************************************
 ## Event Delegation
 
@@ -1213,9 +1278,9 @@ $("#fruits").on("dblclick", "li", function() {
 ```
 
 ---
-With this version of the code, double-clicking to delete
-will work even for new fruits that have been added by
-the user.
+With this version of the code --- with event delegation,
+double-clicking to delete will work even for new fruits that have been
+added by the user.
 ***********************************************************
 ## Summary
 
