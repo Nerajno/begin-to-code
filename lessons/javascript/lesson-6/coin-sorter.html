@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Coin Sorter</title>
+    <style>
+    .bin {
+      background-color: #ccc;
+      border: 2px dashed black;
+      padding: 10px;
+      margin: 10px;
+      min-height: 200px;
+      width: 200px;
+      float: left;
+    }
+
+    #overflow {
+      clear: left;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="bin1" class="bin"></div>
+      <div id="bin2" class="bin"></div>
+      <div id="bin3" class="bin"></div>
+      <div id="bin4" class="bin"></div>
+    </div>
+    <div id="overflow">
+      <img src="images/dime-front.png">
+      <img src="images/quarter-front.png">
+      <img src="images/dime-front.png">
+      <img src="images/nickle-front.png">
+      <img src="images/nickle-front.png">
+      <img src="images/nickle-front.png">
+      <img src="images/quarter-front.png">
+      <img src="images/nickle-front.png">
+      <img src="images/dime-front.png">
+      <img src="images/penny-front.png">
+      <img src="images/dime-front.png">
+      <img src="images/penny-front.png">
+      <img src="images/dime-front.png">
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      $("#overflow").on("click", "img", function() {
+        $(this).remove().appendTo("#bin1");
+      });
+      $(".bin").on("click", "img", function() {
+        console.log("next", $(this).parent(".bin").next());
+        $(this).parent(".bin").next().append($(this).remove());
+      });
+    </script>
+  </body>
+</html>

@@ -75,8 +75,9 @@ screen that looks like this:
 ![Duolingo exercise](https://airportyh.github.io/begin-to-code/lessons/javascript/lesson-5/images/duolingo.PNG)
 
 The top of the screen has a person saying a phrase in the foreign language
-that you are learning, followed by an answer box which contains your answer,
-and a word labels list, and then the "check" button to check your answer.
+that you are learning, followed by an answer box enclosed in dashed borders
+which contains your answer, and a word labels list, and then the "check"
+button to check your answer.
 
 When you click on one of the word in the word labels list under the answer box,
 that word goes into the answer box, and is removed from the set of word labels.
@@ -88,7 +89,8 @@ of the words that are already in the answer box, and those word(s) will
 move back down to the word labels list.
 
 You job for this exercise is to build the answer box and the word labels.
-The key features to implement are:
+The key features to implement are the following --- it does not have to
+work exactly like Duolingo:
 
 1. When you click on a word in the word labels list, it is removed from that
 list and appears in the answer box.
