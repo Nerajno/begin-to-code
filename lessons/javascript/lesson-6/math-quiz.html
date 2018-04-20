@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Math Quiz</title>
+  </head>
+  <body>
+    <h1>Math Quiz</h1>
+    <form id="math-quiz">
+
+      <label>Your name</label><br>
+      <input type="text" name="name"><br>
+
+      <label>What is 4 + 5?</label><br>
+      <input type="radio" name="question-1" value="5">
+      <label>5</label><br>
+      <input type="radio" name="question-1" value="7">
+      <label>7</label><br>
+      <input type="radio" name="question-1" value="9">
+      <label>9</label><br>
+      <input type="radio" name="question-1" value="12">
+      <label>12</label><br>
+
+      <label>What is 8 - 3?</label><br>
+      <select name="question-2">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select><br>
+
+      <label>6 - 4 = 2: Is this right?</label>
+      <input type="checkbox" name="question-3"><br>
+
+      <button type="submit">Submit</button>
+
+    </form>
+    <script src="jquery.js"></script>
+    <script>
+    $("#math-quiz").on("submit", function(event) {
+      event.preventDefault();
+      var name = $("[name=name]").val();
+      var answer1 = $("[name=question-1]:checked").val();
+      var answer2 = $("[name=question-2]").val();
+      var answer3 = $("[name=question-3]").prop("checked");
+      var score = 0;
+      if (answer1 === "9") {
+        score++;
+      }
+      if (answer2 === "5") {
+        score++;
+      }
+      if (answer3) {
+        score++;
+      }
+      alert("Good job, " + name + "! You got " + score + " out of 3!");
+    });
+    </script>
+  </body>
+</html>

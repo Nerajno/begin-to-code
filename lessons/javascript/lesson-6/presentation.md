@@ -924,6 +924,361 @@ $("[name=takeout]").prop("checked", true);
 ---
 And we can set its value this way.
 ***************************************************************
+![Math Quiz](./lessons/javascript/lesson-6/images/math-quiz.png)
+
+---
+As an example that puts all of this together, let's build this
+math quiz.
+***************************************************************
+## Math Quiz Example
+
+```html
+<form id="math-quiz">
+
+  <label>Your name</label><br>
+  <input type="text" name="name"><br>
+
+  <label>What is 4 + 5?</label><br>
+  <input type="radio" name="question-2" value="5">
+  <label>5</label><br>
+  <input type="radio" name="question-2" value="7">
+  <label>7</label><br>
+  <input type="radio" name="question-2" value="9">
+  <label>9</label><br>
+  <input type="radio" name="question-2" value="12">
+  <label>12</label><br>
+
+  <label>What is 8 - 3?</label><br>
+  <select name="question-3">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select><br>
+
+  <label>6 - 4 = 2: Is this right?</label>
+  <input type="checkbox" name="question-4"><br>
+
+  <button type="submit">Submit</button>
+
+</form>
+```
+---
+This is the HTML code for the form (scroll to the bottom to
+  see all of it.)
+
+It has:
+
+* a form
+* a text input for the name of the quiz taker
+* a question as a set of radio buttons
+* a question as a select box
+* a question as a checkbox
+* a submit button
+
+We will write the code necessary to grade this quiz when
+the form is submitted.
+
+Please give this a try on your own. When you are done,
+go to the next slide for the solution.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+This is the solution.
+***************************************************************
+## JS Solution
+
+```js
+[[[$("#math-quiz").on("submit", function(event) {]]]
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+[[[});]]]
+```
+
+---
+First we need to register an event handler to listen
+to submit events on the form.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  [[event.preventDefault();]][[Prevent the browser from submitting]]
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+The first thing we need to do is to prevent the browser
+from submitting the form, if we didn't do this, the browser
+would refresh the page, and non of the following JavaScript
+code would make any difference.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  [[var name = $("[name=name]").val();]][[Value from text input]]
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+Next, we need to grab values out of the form elements.
+
+First, we get the value from a text input using the `.val()` method.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  [[var answer1 = $("[name=question-1]:checked").val();]][[From radio button]]
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+Then, we get the value of the currently selected radio button.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1][[:checked]][[Specifies the checked radio button]]").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+Since this is from a radio button group, we need to use the
+`:checked` pseudo class to specify the checked radio button, and
+get the value from that button.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  [[var answer2 = $("[name=question-2]").val();]][[From select box]]
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+Then, we get the selected value from a select box, which is
+straight forward, using only the `.val()` method.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  [[var answer3 = $("[name=question-3]").prop("checked");]][[Checked boolean from checkbox]]
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+Lastly, we get the "checked" value of the check box.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]")[[.prop("checked")]][[Get value of checked property]];
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+To do this we need to use the `.prop()` method to get the value
+of its "checked" property.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  [[var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }]][[Tally the score]]
+  alert("Good job, " + name + "! You got " + score + " out of 3!");
+});
+```
+
+---
+After all of the answers have been gotten, we use an if statement
+to check each answer, and tally the score.
+***************************************************************
+## JS Solution
+
+```js
+$("#math-quiz").on("submit", function(event) {
+  event.preventDefault();
+  var name = $("[name=name]").val();
+  var answer1 = $("[name=question-1]:checked").val();
+  var answer2 = $("[name=question-2]").val();
+  var answer3 = $("[name=question-3]").prop("checked");
+  var score = 0;
+  if (answer1 === "9") {
+    score++;
+  }
+  if (answer2 === "5") {
+    score++;
+  }
+  if (answer3) {
+    score++;
+  }
+  [[alert("Good job, " + name + "! You got " + score + " out of 3!");]][[Announce the score]]
+});
+```
+
+---
+And finally, announce the score.
+***************************************************************
 ## Summary
 
 * prevent default
