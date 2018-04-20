@@ -22,7 +22,7 @@ certain default browser behaviors, how to work with forms using jQuery.
 ---
 You have some useful links on your website, but rather than navigating
 to the linked website immediately when your users click them, you want
-to do something slightly different, or something entirely
+to do something slightly different, or something *entirely*
 different.
 ***************************************************************
 ## Prevent Default
@@ -67,7 +67,7 @@ $("#useful-links a").on("click", function([[event]][[Event object]]) {
 But now, you introduce an `event` parameter to the handler function.
 This parameter will receive an *event object* which represents the click
 event that happens. It contains information that is related to the click
-event, such as it's name, which mouse button it was, the coordinate of
+event, such as its type name, which mouse button it was, the coordinate of
 the pointer when the click happened, the element that was clicked, and more.
 ***************************************************************
 ## Prevent Default
@@ -93,9 +93,10 @@ It also has a method for preventing the default way in which the browser
 responds to the click: `preventDefault()`.
 
 In this case --- for a link --- the default behavior of the browser
-in response to a click is to navigate to the URL of the link. This method
-call prevents that, and as a result, the browser remains on this page,
-and it is as if nothing happened. In effect, we have broken the links.
+in response to a click is to navigate to the URL of the link. This call
+to `preventDefault()` prevents that, and as a result, the browser
+remains on this page, and it is as if nothing happened. In effect,
+we have broken the links.
 
 What can you do with this?
 ***************************************************************
@@ -118,7 +119,7 @@ $("#useful-links a").on("click", function(event) {
 ```
 
 ---
-May you simply taunt them for wanting to leave your website.
+Maybe you taunt them for wanting to leave your website.
 ***************************************************************
 ## Prevent Default
 
@@ -151,7 +152,7 @@ This piece of code:
 2. Asks the user to confirm by clicking either "Ok" or "Cancel".
 3. If the user clicked "Ok"
     1. It gets the `href` attribute of the link that was clicked.
-    2. Navigates to browser to that location by setting `document.location` to it.
+    2. Navigates to browser to that location by setting `document.location` to the `href`.
 ***************************************************************
 ## Prevent Default
 
@@ -173,12 +174,15 @@ $("#useful-links a").on("click", function(event) {
 
 ---
 An even better idea is to send them to Rick Astley's video.
+
+Try running one of these code examples and clicking on the links
+for yourself to see what happens.
 ***************************************************************
 ## Events you can `preventDefault()`
 
-* Links (a elements): click event to navigate
-* Forms: submit event to submit and navigate
-* Form inputs: mousedown event to focus
+* Links (a elements): `click` event to navigate
+* Forms: `submit` event to submit and navigate
+* Form inputs: `mousedown` event to focus
 
 ---
 Here are some events for which there is a browser default behavior
@@ -220,7 +224,7 @@ These are the form elements that you will commonly use.
 ```
 
 ---
-Let's take this form as the example.
+Let's take this form as an example.
 ***************************************************************
 ## Forms
 
@@ -269,7 +273,8 @@ $("#name-form").on("submit", function(event) {
 ```
 
 ---
-And add an event handler to the `submit` event for this form.
+Then we'll add an event handler to listen to the `submit` event
+for this form.
 ***************************************************************
 ## Forms
 
@@ -381,8 +386,8 @@ $("#name-form").on("submit", function(event) {
 ```
 
 ---
-First, we'll use a CSS selector to find the input element we want on
-the page. We'll use an attribute selector: `[attribute=value]`, which
+This CSS selector finds the input element we want. It uses
+an attribute selector: `[attribute=value]`, which
 matches an element where the value of the specified attribute
 matches the provide attribute.
 ***************************************************************
@@ -405,8 +410,8 @@ $("#name-form").on("submit", function(event) {
 ```
 
 ---
-In this case: our attribute selector: `[name=user_name]` matches
-the text input element.
+In this case, our attribute selector: `[name=user_name]` matches
+this text input element.
 ***************************************************************
 ## Forms
 
@@ -449,7 +454,7 @@ $("#name-form").on("submit", function(event) {
 ```
 
 ---
-Then use the `alert` function to show them a greeting.
+Lastly, we use the `alert` function to show them a greeting.
 ***************************************************************
 ## Form submit vs Button click
 
@@ -459,9 +464,11 @@ Then use the `alert` function to show them a greeting.
     * No need to prevent default
 
 ---
-An alternative to listening on the form submit event is
-to listen on the click event of the submit button. The
-advantage of doing that is you don't have to prevent default.
+Why did we use the `submit` event of the form? Wouldn't it
+suffice to listen for `click` events on the submit button?
+
+The advantage listening for submit button clicks is you
+don't have to `preventDefault()`.
 The disadvantage of that is it doesn't handle hitting
 in a text input ENTER to submit.
 ***************************************************************
@@ -526,7 +533,7 @@ $("[name=comments]").val("jQuery is pretty sweet!");
 ```
 
 ---
-As well as text areas.
+The same is also true for text areas.
 ***************************************************************
 ## Text Areas
 
@@ -552,9 +559,9 @@ to match a closing tag after the opening tag.*
 
 ```html
 <select name="flavor">
-  <option value="strawberry">Strawberry</option>
-  <option value="lemonade">Lemonade</option>
-  <option value="mango">Mango</option>
+  <option value="1">Strawberry</option>
+  <option value="2">Lemonade</option>
+  <option value="3">Mango</option>
 </select>
 ```
 
@@ -563,9 +570,9 @@ With a `select` element,
 ***************************************************************
 ```html
 <select name="flavor">
-  <option value="strawberry">Strawberry</option>
-  <option value="lemonade">Lemonade</option>
-  <option value="mango">Mango</option>
+  <option value="1">Strawberry</option>
+  <option value="2">Lemonade</option>
+  <option value="3">Mango</option>
 </select>
 ```
 
@@ -576,18 +583,53 @@ var selectedFlavor = $("[name=flavor]").val();
 
 Set value:
 ```js
-$("[name=flavor]").val("mango");
+$("[name=flavor]").val("3");
 ```
 
 ---
 You still use the `.val()` method to either read or write
 to the value of the element.
+***************************************************************
+```html
+<select name="flavor">
+  <option value="1">Strawberry</option>
+  <option value="2">Lemonade</option>
+  <option value="3">Mango</option>
+</select>
+```
 
+![Select Box](./lessons/javascript/lesson-6/images/select-box.png)
+
+Read value:
+```js
+var [[selectedFlavor]][["1"]] = $("[name=flavor]").val();
+```
+
+---
+The value is equal to the `value` attribute
+of the option that is currently selected.
+***************************************************************
+```html
+<select name="flavor">
+  <option value="1">Strawberry</option>
+  <option value="2">Lemonade</option>
+  <option value="3">Mango</option>
+</select>
+```
+
+Set value:
+```js
+$("[name=flavor]").val([["4"]][[Non-existent option value]]);
+```
+
+![Unselected](./lessons/javascript/lesson-6/images/unselected.png)
+
+---
 Note that when setting the value of the select box, if
 the supplied value is not the value of one of the
-existing options, it will put the select box in an
-"unselected" state, in which none of the options are
-selected.
+existing option elements within the select box, it will
+put the select box in an "unselected" state, in which none
+of the options are selected.
 ***************************************************************
 ## Radio Buttons
 
@@ -606,7 +648,7 @@ One thing to notice is that both of the male and female
 radio buttons have the same "name" attribute: gender. This
 puts them in the same *radio button group*. You can have
 any number of radio buttons within a radio button group.
-One one radio button within a group can be selected at
+Only one radio button within a group can be selected at
 at moment.
 ***************************************************************
 ## Radio Buttons
@@ -619,14 +661,15 @@ at moment.
 <label>Female</label>
 ```
 
-Don't do this:
+*Don't* do this:
 ```js
 var gender = $("[name=gender]").val();
 ```
 
 ---
 With radio buttons, you cannot simply use an attribute
-selector and then `.val()` to get the value as before.
+selector and then `.val()` to get the value as with other
+form elements.
 ***************************************************************
 ## Radio Buttons
 
@@ -638,7 +681,7 @@ selector and then `.val()` to get the value as before.
 <label>Female</label>
 ```
 
-Don't do this:
+*Don't* do this:
 ```js
 var gender = $([["[name=gender]"]][[Attribute selector]]).val();
 ```
@@ -652,8 +695,6 @@ the case for this example, the [.val() method](http://api.jquery.com/val/) will 
 return the value for the first element, and in this case,
 it means it will always return "male", even if the female
 checkbox is selected.
-
-Instead,
 ***************************************************************
 ## Radio Buttons
 
@@ -671,7 +712,7 @@ var gender = $("[name=gender]:checked").val();
 ```
 
 ---
-this is how you need to read the value for the selected
+Instead, this is how you need to read the value for the selected
 radio button,
 ***************************************************************
 ## Radio Buttons
@@ -692,9 +733,12 @@ var gender = $("[name=gender][[:checked]][[Special selector]]").val();
 ---
 by adding the special `:checked` pseudo-class selector.
 
-[:checked](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked) is a special CSS selector which matches only the radio buttons,
-or checkboxes that have been checked. Thus, it will return
-which ever of the gender radio buttons that is checked.
+[:checked](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked) is a special CSS selector which matches only the elements
+that are currently checked --- it applies only to radio buttons and
+checkboxes.
+
+Thus, in this case, it will return
+which ever of the gender radio buttons that is currently checked.
 ***************************************************************
 ## Radio Buttons
 
@@ -824,7 +868,7 @@ DOM element to the specified value.
 It takes the property
 name as the first argument. If the the second argument
  `propertyValue` is not provided, it is a get, otherwise
- it is a set.
+ it is a set, and it sets value of the property to `propertyValue`.
 ***************************************************************
 ## The prop method
 
@@ -835,7 +879,7 @@ $("#male-button").prop("checked", true);
 ---
 This code sets the `checked` property on a radio
 button to the value `true`. The `checked` property
-is a property specific to radio and checkbox inputs.
+is a boolean property specific to radio and checkbox inputs.
 ***************************************************************
 ## Checkboxes
 
@@ -845,7 +889,7 @@ is a property specific to radio and checkbox inputs.
 ```
 
 ---
-Now, let's move on to checkboxes. This is a label and
+Let's move on to checkboxes. This is a label and
 a checkbox input. A checkbox represents a boolean value
 which can either be `true` or `false`. This is exactly
 the value in the `checked` property of the checkbox
@@ -863,7 +907,8 @@ var takeout = $("[name=takeout]").prop("checked");
 ```
 
 ---
-We can get the value of the checkbox in this way.
+We can get the value of the checkbox in this way --- again
+with the `.prop()` method like so.
 ***************************************************************
 ## Checkboxes
 
