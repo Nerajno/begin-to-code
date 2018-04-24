@@ -3,6 +3,23 @@
 For the form problems below, make sure you register for the form submit
 event and prevent default.
 
+## Link Faker
+
+Create a web page that has a bunch of useful links to real websites.
+Such as this:
+
+```html
+<h1>Useful Resources</h1>
+<ul id="useful-links">
+  <li><a href="http://google.com">Google</a></li>
+  <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
+  <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+</ul>
+```
+
+But when you click on any of the links, each one goes to a different,
+unrelated website.
+
 ## Tip Calculator
 
 Make a tip calculator form. This form has:
@@ -13,6 +30,13 @@ Make a tip calculator form. This form has:
 
 Make it so that when the submit button is clicked, a tip amount
 as well as a total amount are displayed underneath the form.
+
+## Your Quiz
+
+Create a 5 question quiz. Choose a topic, and design your questions and
+answers. You should use all of the different types of form elements
+we've covered. When the quiz is submitted, it should calculate their
+score and announce it to the quiz taker.
 
 ## Caesar Cipher Converter
 

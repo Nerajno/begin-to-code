@@ -29,7 +29,7 @@ different.
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
@@ -50,7 +50,7 @@ these links.
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
@@ -74,7 +74,7 @@ the pointer when the click happened, the element that was clicked, and more.
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
@@ -104,7 +104,7 @@ What can you do with this?
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
@@ -125,7 +125,7 @@ Maybe you taunt them for wanting to leave your website.
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
@@ -158,7 +158,7 @@ This piece of code:
 
 ```html
 <h1>Useful Resources</h1>
-<ul>
+<ul id="useful-links">
   <li><a href="http://google.com">Google</a></li>
   <li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
   <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>

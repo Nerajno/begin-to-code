@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DMV Queue</title>
+    <style>
+    #queue {
+
+    }
+    </style>
+  </head>
+  <body>
+    <form id="add-to-queue-form">
+
+      <label>Name</label><br>
+      <input type="text" name="name"><br>
+
+      <label>Why are you here?</label><br>
+      <select name="reason">
+        <option value="plate">License Plate</option>
+        <option value="renew">Renew License</option>
+      </select><br>
+
+      <button type="submit">Add to Queue</button>
+
+    </form>
+
+    <div id="plate-queue">
+    </div>
+
+    <div id="renew-queue">
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+
+    $("#add-to-queue-form").on("submit", function(event) {
+      event.preventDefault();
+      var name = $("[name=name]").val();
+      var reason = $("[name=reason]").val();
+      var div = $(
+        '<div class="tile">' +
+          'Name: ' + name +
+          '<br>Reason: ' + reason +
+          '<button class="delete-button">x</button>' +
+        '</div>');
+      $("#queue").append(div);
+      $("[name=name]").val("");
+      $("[name=reason]").val("");
+    });
+
+    $("#queue").on("click", ".delete-button", function() {
+      $(this).parent(".tile").remove();
+    });
+
+    </script>
+  </body>
+</html>
