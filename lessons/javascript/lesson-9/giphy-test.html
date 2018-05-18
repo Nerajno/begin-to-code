@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button id="random-button">Random!</button>
+    <script src="jquery.js"></script>
+    <script>
+    $("#random-button").on("click", function() {
+      var url = "https://api.giphy.com/v1/gifs/search?api_key=laC58kluhks7I1lNiSOlTIUZDV7hC7AO&q=lol";
+      $.getJSON(url, function(data) {
+        console.log("This is the data", data);
+        var url = data.data[1].image_url;
+        console.log("This is the url", url);
+        var imageElement = "<img src='" + url + "'>";
+        $("body").append(imageElement);
+      });
+    });
+    </script>
+  </body>
+</html>

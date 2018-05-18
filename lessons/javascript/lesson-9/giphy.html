@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A Suprise Visitor</title>
+    <style>
+    .click {
+      text-decoration: underline;
+      color: blue;
+      cursor: pointer;
+    }
+
+    #article {
+      line-height: 100px;
+      font-size: 1.8em;
+    }
+
+    #article img {
+      vertical-align: middle;
+    }
+    </style>
+  </head>
+  <body>
+    <button id="random">Random</button>
+    <div id="image"></div>
+    <script src="jquery.js"></script>
+    <script>
+    $("#random").on("click", function() {
+      var $giphy = $(this);
+      var word = $giphy.text();
+      var url = "https://api.giphy.com/v1/gifs/random?api_key=I7JnNKNuERiesuqsVxYg2R8swnGcqudI";
+      // var url = "https://api.giphy.com/v1/gifs/random";
+      $.getJSON(url, function(results) {
+        var firstGif = results.data;
+        console.log("data", firstGif);
+        var url = firstGif.image_url;
+        $("#image").html("<img src='" + url + "'>");
+      });
+    });
+    </script>
+  </body>
+</html>

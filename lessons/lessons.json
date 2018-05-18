@@ -20,5 +20,6 @@
   { "title": "JS 5 - jQuery 201", "path": "javascript/lesson-5" },
   { "title": "JS 6 - jQuery 301", "path": "javascript/lesson-6" },
   { "title": "JS 7 - jQuery 401", "path": "javascript/lesson-7" },
-  { "title": "JS 8 - JSON", "path": "javascript/lesson-8" }
+  { "title": "JS 8 - JSON", "path": "javascript/lesson-8" },
+  { "title": "JS 9 - Rest APIs and Ajax", "path": "javascript/lesson-9" }
 ]
